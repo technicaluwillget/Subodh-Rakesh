@@ -31,89 +31,109 @@ export const PublicActivities = ({ activities }) => {
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {publicActivitiesCategories.map((cat) => {
-            const isActive = activeCategory === cat.id;
+        {/* Category Filters (visible when activities exist) */}
+        {activities && activities.length > 0 && (
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+            {publicActivitiesCategories.map((cat) => {
+              const isActive = activeCategory === cat.id;
 
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${
-                  isActive
-                    ? 'bg-[#FF683D] text-white shadow-md shadow-orange-500/25 scale-105'
-                    : 'bg-white text-slate-700 hover:text-[#172033] border border-slate-200 hover:border-slate-300'
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${
+                    isActive
+                      ? 'bg-[#FF683D] text-white shadow-md shadow-orange-500/25 scale-105'
+                      : 'bg-white text-slate-700 hover:text-[#172033] border border-slate-200 hover:border-slate-300'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
-        {/* Activities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
-            {filteredActivities.map((act) => (
-              <motion.div
-                layout
-                key={act.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-clean hover:shadow-elevated transition-all duration-300 flex flex-col hover:-translate-y-1 group"
-              >
-                {/* Photo with Overlay */}
-                <div className="relative h-52 w-full overflow-hidden bg-slate-100">
-                  <img
-                    src={act.image}
-                    alt={act.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
+        {/* Activities Grid or Empty State */}
+        {filteredActivities.length === 0 ? (
+          <div className="bg-white rounded-3xl p-10 sm:p-14 border border-slate-200/80 shadow-clean text-center max-w-2xl mx-auto my-4">
+            <div className="w-16 h-16 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center mx-auto mb-4 text-[#FF683D] shadow-xs">
+              <Calendar size={28} />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#172033] mb-2 font-heading">
+              वर्तमान में कोई नई गतिविधि सूचीबद्ध नहीं है
+            </h3>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md mx-auto mb-6">
+              ज्वालापुर एवं हरिद्वार क्षेत्र में आगामी सार्वजनिक कार्यक्रमों, जनसंवाद व विकास कार्यों का विवरण शीघ्र ही यहाँ साझा किया जाएगा।
+            </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>क्षेत्रीय जनसेवा व जनसंपर्क कार्य निरंतर जारी है</span>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatePresence>
+              {filteredActivities.map((act) => (
+                <motion.div
+                  layout
+                  key={act.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-clean hover:shadow-elevated transition-all duration-300 flex flex-col hover:-translate-y-1 group"
+                >
+                  {/* Photo with Overlay */}
+                  <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={act.image}
+                      alt={act.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
 
-                  {act.status && (
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-[#172033]/90 text-white backdrop-blur-md">
-                      {act.status}
+                    {act.status && (
+                      <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-[#172033]/90 text-white backdrop-blur-md">
+                        {act.status}
+                      </div>
+                    )}
+
+                    <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-white/95 text-[#172033] shadow-sm flex items-center gap-1 font-sans">
+                      <Calendar size={13} className="text-[#FF683D]" />
+                      <span>{act.date}</span>
                     </div>
-                  )}
-
-                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-white/95 text-[#172033] shadow-sm flex items-center gap-1 font-sans">
-                    <Calendar size={13} className="text-[#FF683D]" />
-                    <span>{act.date}</span>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-1.5 text-xs text-[#FF683D] font-bold mb-2">
-                      <MapPin size={13} />
-                      <span>{act.location}</span>
+                  {/* Content */}
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-1.5 text-xs text-[#FF683D] font-bold mb-2">
+                        <MapPin size={13} />
+                        <span>{act.location}</span>
+                      </div>
+
+                      <h3 className="text-base sm:text-lg font-bold text-[#172033] group-hover:text-[#FF683D] transition-colors leading-snug mb-3">
+                        {act.title}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 line-clamp-3">
+                        {act.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-[#172033] group-hover:text-[#FF683D] transition-colors leading-snug mb-3">
-                      {act.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                      {act.description}
-                    </p>
+                    <button
+                      onClick={() => setSelectedActivity(act)}
+                      className="pt-4 border-t border-slate-100 w-full inline-flex items-center justify-between text-xs font-bold text-[#172033] hover:text-[#FF683D] transition"
+                    >
+                      <span>विस्तार से देखें</span>
+                      <ArrowRight size={15} />
+                    </button>
                   </div>
-
-                  <button
-                    onClick={() => setSelectedActivity(act)}
-                    className="pt-4 border-t border-slate-100 w-full inline-flex items-center justify-between text-xs font-bold text-[#172033] hover:text-[#FF683D] transition"
-                  >
-                    <span>विस्तार से देखें</span>
-                    <ArrowRight size={15} />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        )}
 
         {/* Modal for viewing full activity details */}
         <AnimatePresence>

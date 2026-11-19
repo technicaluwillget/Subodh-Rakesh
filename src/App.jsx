@@ -23,8 +23,41 @@ export function App() {
   // State managed activities, news, gallery with localStorage persistence
   const [activities, setActivities] = useState(() => {
     const saved = localStorage.getItem('sr_activities');
-    return saved ? JSON.parse(saved) : initialPublicActivities;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        // Clear out old dummy activities if present
+        if (parsed.some(item => 
+          ['act-1', 'act-2', 'act-3', 'act-4', 'act-5', 'act-6'].includes(item.id) ||
+          (item.image && item.image.includes('unsplash'))
+        )) {
+          localStorage.setItem('sr_activities', JSON.stringify([]));
+          return [];
+        }
+        return parsed;
+      } catch (e) {
+        return [];
+      }
+    }
+    return initialPublicActivities;
   });
+
+  // Sync state changes to localStorage
+  useEffect(() => {
+    localStorage.setItem('sr_activities', JSON.stringify(activities));
+  }, [activities]);
+
+  useEffect(() => {
+    localStorage.setItem('sr_news', JSON.stringify(newsItems));
+  }, [newsItems]);
+
+  useEffect(() => {
+    localStorage.setItem('sr_gallery', JSON.stringify(galleryItems));
+  }, [galleryItems]);
+
+  useEffect(() => {
+    localStorage.setItem('sr_messages', JSON.stringify(messages));
+  }, [messages]);
 
   const [newsItems, setNewsItems] = useState(() => {
     const saved = localStorage.getItem('sr_news');

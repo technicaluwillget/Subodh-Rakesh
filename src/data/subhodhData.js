@@ -86,68 +86,7 @@ export const publicActivitiesCategories = [
   { id: "grievance", label: "जनसमस्याओं से संबंधित कार्यक्रम" }
 ];
 
-export const initialPublicActivities = [
-  {
-    id: "act-1",
-    title: "ज्वालापुर विधानसभा क्षेत्र में विशाल जनसंवाद एवं चौपाल कार्यक्रम",
-    category: "public-outreach",
-    date: "12 नवंबर 2024",
-    location: "ज्वालापुर, हरिद्वार",
-    image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80",
-    description: "क्षेत्र के नागरिकों और बुजुर्गों के साथ संवाद कर पेयजल, सड़क सुदृढ़ीकरण एवं नालियों की मरम्मत से संबंधित समस्याओं को सुना तथा अधिकारियों से त्वरित निस्तारण की मांग की।",
-    status: "सफलतापूर्वक संपन्न"
-  },
-  {
-    id: "act-2",
-    title: "ग्रामीण क्षेत्रों में स्थानीय किसानों एवं युवाओं के साथ महत्वपूर्ण बैठक",
-    category: "community-meetings",
-    date: "28 अक्टूबर 2024",
-    location: "भगवानपुर / ज्वालापुर सीमावर्ती ग्राम",
-    image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80",
-    description: "किसानों की फसलों के उचित मूल्य, सिंचाई के संसाधनों और युवाओं के खेल मैदान से जुड़े विषयों पर गंभीर चर्चा और कार्ययोजना निर्माण।",
-    status: "नियमित संवाद"
-  },
-  {
-    id: "act-3",
-    title: "हरिद्वार में सामाजिक सौहार्द एवं सामुदायिक कल्याण गोष्ठी",
-    category: "assemblies",
-    date: "15 अक्टूबर 2024",
-    location: "हरिद्वार नगर",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80",
-    description: "सभी वर्गों के प्रबुद्ध नागरिकों और सामाजिक कार्यकर्ताओं के साथ मिलकर क्षेत्र के समग्र विकास और भाईचारे को सुदृढ़ करने का आह्वान किया।",
-    status: "विशेष कार्यक्रम"
-  },
-  {
-    id: "act-4",
-    title: "जनसमस्या निवारण शिविर एवं विकास कार्यों का स्थलीय निरीक्षण",
-    category: "grievance",
-    date: "05 सितंबर 2024",
-    location: "ज्वालापुर मुख्य बाजार एवं बस्तियां",
-    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80",
-    description: "विद्युत आपूर्ति, सफाई व्यवस्था एवं स्ट्रीट लाइटों की स्थिति का जायजा लेते हुए संबंधित प्रशासनिक अधिकारियों को तत्काल कार्रवाई के निर्देश दिए।",
-    status: "कार्रवाई जारी"
-  },
-  {
-    id: "act-5",
-    title: "क्षेत्रीय नवयुवक मंगल दल खेलकूद प्रतियोगिता का शुभारंभ व सम्मान",
-    category: "public-events",
-    date: "18 अगस्त 2024",
-    location: "हरिद्वार ग्रामीण खेल प्रांगण",
-    image: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80",
-    description: "उत्तराखंड के होनहार प्रतिभावान युवा खिलाड़ियों को पुरस्कृत कर उन्हें राज्य व राष्ट्रीय स्तर पर क्षेत्र का नाम रोशन करने के लिए प्रेरित किया।",
-    status: "वार्षिक आयोजन"
-  },
-  {
-    id: "act-6",
-    title: "सड़क निर्माण एवं संपर्क मार्ग सुदृढ़ीकरण हेतु भूमि पूजन व निरीक्षण",
-    category: "regional-dev",
-    date: "22 जुलाई 2024",
-    location: "ज्वालापुर देहात क्षेत्र",
-    image: "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80",
-    description: "ग्रामीण आबादी को मुख्य राजमार्ग से जोड़ने वाले प्रमुख संपर्क मार्ग के निर्माण कार्य का शुभारंभ कर गुणवत्तापूर्ण कार्य कराने का संकल्प लिया।",
-    status: "प्रगति पर"
-  }
-];
+export const initialPublicActivities = [];
 
 export const socialWorkCategories = [
   {

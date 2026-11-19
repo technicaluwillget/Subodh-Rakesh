@@ -46,7 +46,7 @@ export const AdminDashboard = ({
     category: 'public-outreach',
     date: new Date().toLocaleDateString('hi-IN'),
     location: 'ज्वालापुर, हरिद्वार',
-    image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80',
+    image: '/gallery/gallery-1.jpg',
     description: '',
     status: 'सक्रिय'
   });
@@ -60,7 +60,7 @@ export const AdminDashboard = ({
     source: 'प्रेस विज्ञप्ति',
     tag: 'धार्मिक एवं सामाजिक कार्यक्रम',
     category: 'धार्मिक एवं सामाजिक कार्यक्रम',
-    image: 'https://images.unsplash.com/photo-1545232979-fbf68fe9b1af?auto=format&fit=crop&w=1200&q=80',
+    image: '/gallery/gallery-2.jpg',
     excerpt: '',
     fullContent: ''
   });
@@ -69,7 +69,7 @@ export const AdminDashboard = ({
   const [newMedia, setNewMedia] = useState({
     title: '',
     category: 'Public Events',
-    url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
+    url: '/gallery/gallery-3.jpg',
     date: new Date().toLocaleDateString('hi-IN'),
     type: 'photo'
   });
@@ -104,7 +104,7 @@ export const AdminDashboard = ({
       category: 'public-outreach',
       date: new Date().toLocaleDateString('hi-IN'),
       location: 'ज्वालापुर, हरिद्वार',
-      image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80',
+      image: '/gallery/gallery-1.jpg',
       description: '',
       status: 'सक्रिय'
     });
@@ -140,7 +140,7 @@ export const AdminDashboard = ({
       source: 'प्रेस विज्ञप्ति',
       tag: 'धार्मिक एवं सामाजिक कार्यक्रम',
       category: 'धार्मिक एवं सामाजिक कार्यक्रम',
-      image: 'https://images.unsplash.com/photo-1545232979-fbf68fe9b1af?auto=format&fit=crop&w=1200&q=80',
+      image: '/gallery/gallery-2.jpg',
       excerpt: '',
       fullContent: ''
     });
@@ -183,7 +183,7 @@ export const AdminDashboard = ({
     setNewMedia({
       title: '',
       category: 'Public Events',
-      url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
+      url: '/gallery/gallery-3.jpg',
       date: new Date().toLocaleDateString('hi-IN'),
       type: 'photo'
     });
