@@ -51,13 +51,16 @@ export const AdminDashboard = ({
     status: 'सक्रिय'
   });
 
-  // Form states for adding new news
+  // Form states for adding/editing news
+  const [editingNewsId, setEditingNewsId] = useState(null);
   const [newNews, setNewNews] = useState({
     title: '',
     date: new Date().toLocaleDateString('hi-IN'),
+    location: '',
     source: 'प्रेस विज्ञप्ति',
-    tag: 'विकास कार्य',
-    image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80',
+    tag: 'धार्मिक एवं सामाजिक कार्यक्रम',
+    category: 'धार्मिक एवं सामाजिक कार्यक्रम',
+    image: 'https://images.unsplash.com/photo-1545232979-fbf68fe9b1af?auto=format&fit=crop&w=1200&q=80',
     excerpt: '',
     fullContent: ''
   });
@@ -113,21 +116,56 @@ export const AdminDashboard = ({
   };
 
   // News handlers
-  const handleAddNews = (e) => {
-    e.preventDefault();
-    if (!newNews.title) return;
-    const item = { ...newNews, id: 'news-' + Date.now() };
-    setNewsItems([item, ...newsItems]);
-    showNotice('नया समाचार सफलतापूर्वक प्रकाशित हुआ!');
+  const handleStartEditNews = (news) => {
+    setEditingNewsId(news.id);
+    setNewNews({
+      title: news.title || '',
+      date: news.date || '',
+      location: news.location || '',
+      source: news.source || 'प्रेस विज्ञप्ति',
+      tag: news.tag || news.category || 'धार्मिक एवं सामाजिक कार्यक्रम',
+      category: news.category || news.tag || 'धार्मिक एवं सामाजिक कार्यक्रम',
+      image: news.image || '',
+      excerpt: news.excerpt || '',
+      fullContent: news.fullContent || ''
+    });
+  };
+
+  const handleCancelEditNews = () => {
+    setEditingNewsId(null);
     setNewNews({
       title: '',
       date: new Date().toLocaleDateString('hi-IN'),
+      location: '',
       source: 'प्रेस विज्ञप्ति',
-      tag: 'विकास कार्य',
-      image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80',
+      tag: 'धार्मिक एवं सामाजिक कार्यक्रम',
+      category: 'धार्मिक एवं सामाजिक कार्यक्रम',
+      image: 'https://images.unsplash.com/photo-1545232979-fbf68fe9b1af?auto=format&fit=crop&w=1200&q=80',
       excerpt: '',
       fullContent: ''
     });
+  };
+
+  const handleSaveNews = (e) => {
+    e.preventDefault();
+    if (!newNews.title) return;
+
+    if (editingNewsId) {
+      setNewsItems(newsItems.map(item => 
+        item.id === editingNewsId ? { ...item, ...newNews } : item
+      ));
+      showNotice('समाचार विवरण सफलतापूर्वक अपडेट हुआ!');
+      handleCancelEditNews();
+    } else {
+      const item = { 
+        ...newNews, 
+        id: 'news-' + Date.now(), 
+        isLatest: true 
+      };
+      setNewsItems([item, ...newsItems]);
+      showNotice('नया समाचार सफलतापूर्वक प्रकाशित हुआ!');
+      handleCancelEditNews();
+    }
   };
 
   const handleDeleteNews = (id) => {
@@ -444,49 +482,184 @@ export const AdminDashboard = ({
               {/* TAB 4: MANAGE NEWS */}
               {currentTab === 'news' && (
                 <div className="space-y-6">
-                  <div>
-                    <h4 className="text-lg font-bold text-[#172033]">समाचार व अपडेट्स जोड़ें</h4>
-                    <p className="text-xs text-slate-500">प्रेस विज्ञप्ति और घोषणाएं प्रकाशित करें</p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-lg font-bold text-[#172033]">
+                        {editingNewsId ? 'समाचार विवरण संपादित करें (Edit News)' : 'नया समाचार प्रकाशित करें (Add News)'}
+                      </h4>
+                      <p className="text-xs text-slate-500">
+                        वास्तविक समाचार, धार्मिक एवं सामाजिक कार्यक्रम, उत्तराखण्ड विशेष अपडेट्स
+                      </p>
+                    </div>
+
+                    {editingNewsId && (
+                      <button
+                        onClick={handleCancelEditNews}
+                        className="px-3 py-1.5 rounded-lg bg-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-300"
+                      >
+                        एडिट रद्द करें (Cancel)
+                      </button>
+                    )}
                   </div>
 
-                  <form onSubmit={handleAddNews} className="p-4 rounded-2xl bg-[#F5F6FA] border border-slate-200 space-y-3">
-                    <input
-                      type="text"
-                      placeholder="समाचार शीर्षक"
-                      value={newNews.title}
-                      onChange={(e) => setNewNews({ ...newNews, title: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border text-xs"
-                      required
-                    />
-                    <textarea
-                      placeholder="संक्षिप्त सारांश (Excerpt)..."
-                      rows={2}
-                      value={newNews.excerpt}
-                      onChange={(e) => setNewNews({ ...newNews, excerpt: e.target.value })}
-                      className="w-full px-3 py-2 rounded-lg border text-xs"
-                    />
-                    <button
-                      type="submit"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FF683D] text-white text-xs font-bold hover:bg-[#E55328]"
-                    >
-                      <Plus size={14} />
-                      <span>समाचार प्रकाशित करें</span>
-                    </button>
+                  {/* Add / Edit Form */}
+                  <form onSubmit={handleSaveNews} className="p-5 rounded-2xl bg-[#F5F6FA] border border-slate-200 space-y-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-[11px] font-bold text-slate-700 mb-1">समाचार शीर्षक *</label>
+                        <input
+                          type="text"
+                          placeholder="समाचार का मुख्य शीर्षक"
+                          value={newNews.title}
+                          onChange={(e) => setNewNews({ ...newNews, title: e.target.value })}
+                          className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-bold text-slate-700 mb-1">समाचार श्रेणी (Category)</label>
+                        <select
+                          value={newNews.category || newNews.tag}
+                          onChange={(e) => setNewNews({ ...newNews, category: e.target.value, tag: e.target.value })}
+                          className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                        >
+                          <option value="धार्मिक एवं सामाजिक कार्यक्रम">धार्मिक एवं सामाजिक कार्यक्रम</option>
+                          <option value="उत्तराखण्ड विशेष">उत्तराखण्ड विशेष</option>
+                          <option value="जनसंपर्क गतिविधियां">जनसंपर्क गतिविधियां</option>
+                          <option value="सामाजिक कार्य">सामाजिक कार्य</option>
+                          <option value="नवीनतम समाचार">नवीनतम समाचार</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div>
+                        <label className="block text-[11px] font-bold text-slate-700 mb-1">तारीख (Date)</label>
+                        <input
+                          type="text"
+                          placeholder="उदा. 9 नवंबर या नवंबर 2024"
+                          value={newNews.date}
+                          onChange={(e) => setNewNews({ ...newNews, date: e.target.value })}
+                          className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-bold text-slate-700 mb-1">स्थान (Location)</label>
+                        <input
+                          type="text"
+                          placeholder="उदा. ज्वालापुर, गढ़मीरपुर, हरिद्वार"
+                          value={newNews.location}
+                          onChange={(e) => setNewNews({ ...newNews, location: e.target.value })}
+                          className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-bold text-slate-700 mb-1">स्रोत (Source)</label>
+                        <input
+                          type="text"
+                          placeholder="उदा. आधिकारिक प्रेस विज्ञप्ति"
+                          value={newNews.source}
+                          onChange={(e) => setNewNews({ ...newNews, source: e.target.value })}
+                          className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 mb-1">फोटो URL या इमेज लिंक</label>
+                      <input
+                        type="text"
+                        placeholder="Image URL"
+                        value={newNews.image}
+                        onChange={(e) => setNewNews({ ...newNews, image: e.target.value })}
+                        className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 mb-1">संक्षिप्त सारांश (Excerpt) *</label>
+                      <textarea
+                        placeholder="समाचार का मुख्य सारांश जो कार्ड में दिखेगा..."
+                        rows={2}
+                        value={newNews.excerpt}
+                        onChange={(e) => setNewNews({ ...newNews, excerpt: e.target.value })}
+                        className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 mb-1">पूरा समाचार विवरण (Full Content)</label>
+                      <textarea
+                        placeholder="विस्तृत समाचार, वक्ताओं, अतिथियों के नाम और पूरा संदेश..."
+                        rows={5}
+                        value={newNews.fullContent}
+                        onChange={(e) => setNewNews({ ...newNews, fullContent: e.target.value })}
+                        className="w-full px-3 py-2 rounded-lg border text-xs bg-white"
+                      />
+                    </div>
+
+                    <div className="flex items-center gap-2 pt-2">
+                      <button
+                        type="submit"
+                        className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#FF683D] text-white text-xs font-bold hover:bg-[#E55328] shadow-xs"
+                      >
+                        {editingNewsId ? <Save size={14} /> : <Plus size={14} />}
+                        <span>{editingNewsId ? 'अपडेट सेव करें (Save Changes)' : 'समाचार प्रकाशित करें'}</span>
+                      </button>
+
+                      {editingNewsId && (
+                        <button
+                          type="button"
+                          onClick={handleCancelEditNews}
+                          className="px-4 py-2.5 rounded-xl bg-slate-200 text-slate-700 text-xs font-bold"
+                        >
+                          रद्द करें
+                        </button>
+                      )}
+                    </div>
                   </form>
 
+                  {/* List of News Items with Edit and Delete Buttons */}
                   <div className="space-y-2">
+                    <h5 className="font-bold text-xs text-slate-600 uppercase tracking-wider">
+                      वर्तमान प्रकाशित समाचार ({newsItems.length})
+                    </h5>
+
                     {newsItems.map((n) => (
-                      <div key={n.id} className="p-3 rounded-xl border border-slate-200 flex items-center justify-between text-xs">
-                        <div>
-                          <div className="font-bold text-[#172033]">{n.title}</div>
-                          <div className="text-slate-500">{n.source} • {n.date}</div>
+                      <div key={n.id} className="p-3.5 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                        <div className="space-y-0.5 max-w-xl">
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-100 text-[#FF683D]">
+                              {n.tag || n.category}
+                            </span>
+                            {n.date && <span className="text-slate-400 font-mono text-[11px]">{n.date}</span>}
+                          </div>
+                          <div className="font-bold text-[#172033] line-clamp-1">{n.title}</div>
+                          <div className="text-slate-500 line-clamp-1 text-[11px]">{n.excerpt}</div>
                         </div>
-                        <button
-                          onClick={() => handleDeleteNews(n.id)}
-                          className="p-1.5 rounded-lg text-rose-600 hover:bg-rose-50"
-                        >
-                          <Trash2 size={16} />
-                        </button>
+
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <button
+                            onClick={() => handleStartEditNews(n)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold"
+                            title="एडिट करें"
+                          >
+                            <Edit3 size={13} />
+                            <span>एडिट</span>
+                          </button>
+
+                          <button
+                            onClick={() => handleDeleteNews(n.id)}
+                            className="p-1.5 rounded-lg text-rose-600 hover:bg-rose-50"
+                            title="हटाएं"
+                          >
+                            <Trash2 size={16} />
+                          </button>
+                        </div>
                       </div>
                     ))}
                   </div>

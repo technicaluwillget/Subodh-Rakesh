@@ -28,7 +28,20 @@ export function App() {
 
   const [newsItems, setNewsItems] = useState(() => {
     const saved = localStorage.getItem('sr_news');
-    return saved ? JSON.parse(saved) : initialNewsUpdates;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        // Clear out old dummy news items if present
+        if (parsed.some(item => item.id === 'news-1' || item.id === 'news-2')) {
+          localStorage.setItem('sr_news', JSON.stringify(initialNewsUpdates));
+          return initialNewsUpdates;
+        }
+        return parsed;
+      } catch (e) {
+        return initialNewsUpdates;
+      }
+    }
+    return initialNewsUpdates;
   });
 
   const [galleryItems, setGalleryItems] = useState(() => {
