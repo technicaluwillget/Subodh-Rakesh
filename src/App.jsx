@@ -42,23 +42,6 @@ export function App() {
     return initialPublicActivities;
   });
 
-  // Sync state changes to localStorage
-  useEffect(() => {
-    localStorage.setItem('sr_activities', JSON.stringify(activities));
-  }, [activities]);
-
-  useEffect(() => {
-    localStorage.setItem('sr_news', JSON.stringify(newsItems));
-  }, [newsItems]);
-
-  useEffect(() => {
-    localStorage.setItem('sr_gallery', JSON.stringify(galleryItems));
-  }, [galleryItems]);
-
-  useEffect(() => {
-    localStorage.setItem('sr_messages', JSON.stringify(messages));
-  }, [messages]);
-
   const [newsItems, setNewsItems] = useState(() => {
     const saved = localStorage.getItem('sr_news');
     if (saved) {
@@ -99,6 +82,23 @@ export function App() {
     const saved = localStorage.getItem('sr_messages');
     return saved ? JSON.parse(saved) : [];
   });
+
+  // Sync state changes to localStorage after all states are initialized
+  useEffect(() => {
+    localStorage.setItem('sr_activities', JSON.stringify(activities));
+  }, [activities]);
+
+  useEffect(() => {
+    localStorage.setItem('sr_news', JSON.stringify(newsItems));
+  }, [newsItems]);
+
+  useEffect(() => {
+    localStorage.setItem('sr_gallery', JSON.stringify(galleryItems));
+  }, [galleryItems]);
+
+  useEffect(() => {
+    localStorage.setItem('sr_messages', JSON.stringify(messages));
+  }, [messages]);
 
   const handleNewMessage = (newMsg) => {
     setMessages(prev => [newMsg, ...prev]);
