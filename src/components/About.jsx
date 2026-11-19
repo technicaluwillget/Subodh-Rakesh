@@ -22,9 +22,7 @@ const pillarIcons = {
   Sprout
 };
 
-export const About = ({ customPhoto }) => {
-  const photoSrc = customPhoto || subodhPhoto;
-
+export const About = () => {
   return (
     <section id="about" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +46,7 @@ export const About = ({ customPhoto }) => {
         {/* 2-Column Layout: Left Photo & Profile Specs | Right Story & Vision */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Photo Card & Structured Background Details */}
+          {/* Left Column: Fixed Official Photo Card & Structured Background Details */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -57,10 +55,10 @@ export const About = ({ customPhoto }) => {
             className="lg:col-span-5 space-y-6"
           >
             {/* Visual Portrait in 1:1 Aspect Ratio with zero cropping */}
-            <div className="rounded-3xl overflow-hidden bg-white p-3 border border-slate-200 shadow-md">
+            <div className="rounded-3xl overflow-hidden bg-white p-2.5 shadow-elevated border border-slate-200/80">
               <div className="rounded-2xl overflow-hidden aspect-square bg-slate-50">
                 <img
-                  src={photoSrc}
+                  src={subodhPhoto}
                   alt="सुबोध राकेश"
                   className="w-full h-full object-cover object-center"
                 />

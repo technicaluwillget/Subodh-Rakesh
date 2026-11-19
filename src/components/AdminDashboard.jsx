@@ -30,9 +30,7 @@ export const AdminDashboard = ({
   setNewsItems,
   galleryItems,
   setGalleryItems,
-  messages,
-  customPhoto,
-  onPhotoChange
+  messages
 }) => {
   // Authentication state
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -275,18 +273,6 @@ export const AdminDashboard = ({
               </button>
 
               <button
-                onClick={() => setCurrentTab('profile')}
-                className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-bold text-left whitespace-nowrap transition ${
-                  currentTab === 'profile'
-                    ? 'bg-[#172033] text-white shadow-xs'
-                    : 'text-slate-600 hover:bg-slate-200'
-                }`}
-              >
-                <Camera size={16} />
-                <span>तस्वीर व प्रोफाइल (Photo)</span>
-              </button>
-
-              <button
                 onClick={() => setCurrentTab('activities')}
                 className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-bold text-left whitespace-nowrap transition ${
                   currentTab === 'activities'
@@ -390,49 +376,7 @@ export const AdminDashboard = ({
                 </div>
               )}
 
-              {/* TAB 2: PROFILE & PHOTO UPDATE */}
-              {currentTab === 'profile' && (
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-lg font-bold text-[#172033]">सुबोध राकेश जी की वास्तविक फोटो अपडेट करें</h4>
-                    <p className="text-xs text-slate-500">
-                      यहाँ से आप अपने कंप्यूटर से वास्तविक फोटो अपलोड कर सकते हैं। यह फोटो तुरंत Hero Section और About Me में दिखने लगेगी।
-                    </p>
-                  </div>
-
-                  <div className="p-6 rounded-2xl border border-slate-200 flex flex-col sm:flex-row items-center gap-6 bg-[#F5F6FA]">
-                    <div className="w-32 h-32 rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200 shrink-0">
-                      <img
-                        src={customPhoto || subodhPhoto}
-                        alt="Current Profile"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    <div className="space-y-3 text-center sm:text-left">
-                      <h5 className="font-bold text-sm text-[#172033]">कंप्यूटर से नई फोटो चुनें (Upload Photo)</h5>
-                      <p className="text-xs text-slate-600">
-                        निर्देशानुसार वास्तविक व्यक्ति का प्राकृतिक चेहरा रखने के लिए अपनी वास्तविक फोटो सेलेक्ट करें:
-                      </p>
-                      <label className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF683D] text-white text-xs font-bold cursor-pointer hover:bg-[#E55328] transition shadow-xs">
-                        <Camera size={16} />
-                        <span>फोटो सेलेक्ट करें (Browse Image)</span>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          className="hidden"
-                          onChange={(e) => {
-                            onPhotoChange(e);
-                            showNotice('नई फोटो सफलतापूर्वक अपडेट हो गई!');
-                          }}
-                        />
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* TAB 3: MANAGE ACTIVITIES */}
+              {/* TAB 2: MANAGE ACTIVITIES */}
               {currentTab === 'activities' && (
                 <div className="space-y-6">
                   <div>

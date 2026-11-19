@@ -1,13 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Sparkles, MapPin, Award, CheckCircle2, Camera } from 'lucide-react';
+import { ArrowRight, Users, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
 import { personalInfo } from '../data/subhodhData';
 import subodhPhoto from '../assets/subodh-rakesh.jpg';
 
-export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoChange }) => {
-  // Always use the official uploaded photo of Subodh Rakesh
-  const photoSrc = customPhoto || subodhPhoto;
-
+export const Hero = ({ onProfileClick, onActivitiesClick }) => {
   return (
     <section 
       id="home"
@@ -56,26 +53,25 @@ export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoCh
                 {personalInfo.taglineHindi}
               </span>
               {personalInfo.slogan && (
-                <span className="text-sm sm:text-base font-bold text-slate-600 bg-white/70 px-3 py-1 rounded-lg border border-slate-200">
+                <span className="text-sm sm:text-base font-bold text-slate-700 bg-white/80 px-3.5 py-1 rounded-lg border border-slate-200 shadow-2xs">
                   {personalInfo.slogan}
                 </span>
               )}
             </div>
 
             {/* Intro Paragraph */}
-            <p className="mt-6 text-base sm:text-lg text-slate-700 max-w-xl leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg text-slate-700 max-w-xl leading-relaxed font-normal">
               {personalInfo.heroDescription}
             </p>
 
             {/* Key Location Badge */}
-            <div className="mt-4 flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 bg-white/60 px-3 py-1.5 rounded-lg border border-slate-200/60">
+            <div className="mt-4 flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 bg-white/70 px-3.5 py-1.5 rounded-xl border border-slate-200/80 shadow-2xs">
               <MapPin size={16} className="text-[#FF683D]" />
               <span>ज्वालापुर / हरिद्वार, उत्तराखंड</span>
             </div>
 
             {/* Two Primary Buttons */}
             <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 w-full sm:w-auto">
-              
               {/* Button 1: मेरी प्रोफाइल देखें */}
               <button
                 onClick={onProfileClick}
@@ -93,7 +89,6 @@ export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoCh
                 <Users size={18} className="text-[#FF683D]" />
                 <span>सार्वजनिक गतिविधियां देखें</span>
               </button>
-
             </div>
 
             {/* Stats Overview Pill Bar */}
@@ -112,59 +107,54 @@ export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoCh
 
           </motion.div>
 
-          {/* Right Column: High-Impact Profile Photo of Subodh Rakesh (Exact 1:1 Aspect Ratio with zero cropping) */}
+          {/* Right Column: High-Impact Fixed Official Photo Frame of Subodh Rakesh */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, x: 35 }}
+            initial={{ opacity: 0, scale: 0.94, x: 35 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center lg:justify-end"
+            className="lg:col-span-5 flex flex-col items-center justify-center lg:items-end"
           >
             <div className="relative w-full max-w-md">
               
-              {/* Decorative Geometric Rings */}
-              <div className="absolute -inset-3 rounded-[38px] bg-gradient-to-tr from-[#FF683D]/25 via-indigo-300/30 to-blue-300/25 blur-xl -z-10" />
+              {/* Outer Ambient Glow matching the orange and saffron tones */}
+              <div className="absolute -inset-2 rounded-[36px] bg-gradient-to-tr from-[#FF683D]/30 via-amber-300/25 to-blue-300/25 blur-xl -z-10" />
               
               {/* Floating Badge 1: Uttarakhand Pride */}
-              <div className="absolute -top-4 -left-4 z-20 px-4 py-2 rounded-2xl bg-white shadow-elevated border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#172033]">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+              <div className="absolute -top-3.5 -left-3.5 z-20 px-3.5 py-1.5 rounded-xl bg-white shadow-elevated border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#172033]">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>उत्तराखंड जनसेवक</span>
               </div>
 
               {/* Floating Badge 2: Jwalapur Trust */}
-              <div className="absolute -bottom-4 -right-4 z-20 px-4 py-2 rounded-2xl bg-white shadow-elevated border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#FF683D]">
-                <CheckCircle2 size={16} />
+              <div className="absolute -bottom-3.5 -right-3.5 z-20 px-3.5 py-1.5 rounded-xl bg-white shadow-elevated border border-slate-100 flex items-center gap-1.5 text-xs font-bold text-[#FF683D]">
+                <CheckCircle2 size={15} />
                 <span>ज्वालापुर का विश्वास</span>
               </div>
 
-              {/* Card Container for 1:1 Square Photo */}
-              <div className="relative rounded-[32px] overflow-hidden bg-white p-2.5 sm:p-3 shadow-elevated border border-white/80">
-                <div className="relative rounded-[24px] overflow-hidden aspect-square flex items-center justify-center bg-slate-50">
+              {/* Perfectly Fitted Frame for the 1:1 Square Portrait */}
+              <div className="relative rounded-[32px] overflow-hidden bg-white p-2 shadow-elevated border border-white">
+                <div className="relative rounded-[26px] overflow-hidden aspect-square flex items-center justify-center bg-slate-100 shadow-inner">
                   <img
-                    src={photoSrc}
+                    src={subodhPhoto}
                     alt="सुबोध राकेश (Subhod Rakesh)"
-                    className="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.01]"
+                    loading="eager"
                   />
                 </div>
+              </div>
 
-                {/* Subtitle Bar below Photo (completely clean, zero overlay covering the photo text) */}
-                <div className="pt-3 pb-1 px-3 flex items-center justify-between">
-                  <div>
-                    <div className="text-lg font-bold text-[#172033] font-heading">सुबोध राकेश</div>
-                    <div className="text-xs text-[#FF683D] font-semibold">जनता की सेवा, विकास का संकल्प</div>
-                  </div>
-                  
-                  <label 
-                    className="p-2 rounded-xl bg-slate-100 hover:bg-orange-100 text-slate-600 hover:text-[#FF683D] cursor-pointer transition shadow-2xs"
-                    title="फोटो बदलें (Update Photo)"
-                  >
-                    <Camera size={16} />
-                    <input 
-                      type="file" 
-                      accept="image/*" 
-                      className="hidden" 
-                      onChange={onPhotoChange} 
-                    />
-                  </label>
+              {/* Elegant Name Plate under the photo (Clean, no overlay on top of photo) */}
+              <div className="mt-4 px-5 py-3 rounded-2xl bg-white shadow-clean border border-slate-100 flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-[#172033] font-heading leading-tight">
+                    सुबोध राकेश
+                  </h3>
+                  <p className="text-xs font-bold text-[#FF683D] mt-0.5">
+                    जनता की सेवा, विकास का संकल्प
+                  </p>
+                </div>
+                <div className="px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-[#FF683D] text-xs font-bold">
+                  हरिद्वार
                 </div>
               </div>
 

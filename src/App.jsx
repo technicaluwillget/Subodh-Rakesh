@@ -41,38 +41,6 @@ export function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
-  const [customPhoto, setCustomPhoto] = useState(() => {
-    return localStorage.getItem('sr_custom_photo') || subodhPhoto;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('sr_activities', JSON.stringify(activities));
-  }, [activities]);
-
-  useEffect(() => {
-    localStorage.setItem('sr_news', JSON.stringify(newsItems));
-  }, [newsItems]);
-
-  useEffect(() => {
-    localStorage.setItem('sr_gallery', JSON.stringify(galleryItems));
-  }, [galleryItems]);
-
-  useEffect(() => {
-    localStorage.setItem('sr_messages', JSON.stringify(messages));
-  }, [messages]);
-
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setCustomPhoto(reader.result);
-        localStorage.setItem('sr_custom_photo', reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleNewMessage = (newMsg) => {
     setMessages(prev => [newMsg, ...prev]);
   };
@@ -95,12 +63,10 @@ export function App() {
       <Hero
         onProfileClick={() => scrollToSection('about')}
         onActivitiesClick={() => scrollToSection('activities')}
-        customPhoto={customPhoto}
-        onPhotoChange={handlePhotoChange}
       />
 
       {/* 3. About Us Section */}
-      <About customPhoto={customPhoto} />
+      <About />
 
       {/* 4. Public Activities Section */}
       <PublicActivities activities={activities} />
@@ -134,8 +100,6 @@ export function App() {
         galleryItems={galleryItems}
         setGalleryItems={setGalleryItems}
         messages={messages}
-        customPhoto={customPhoto}
-        onPhotoChange={handlePhotoChange}
       />
 
     </div>
