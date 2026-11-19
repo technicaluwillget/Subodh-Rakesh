@@ -19,6 +19,7 @@ import {
   LogOut
 } from 'lucide-react';
 import { personalInfo } from '../data/subhodhData';
+import subodhPhoto from '../assets/subodh-rakesh.jpg';
 
 export const AdminDashboard = ({ 
   isOpen, 
@@ -400,9 +401,9 @@ export const AdminDashboard = ({
                   </div>
 
                   <div className="p-6 rounded-2xl border border-slate-200 flex flex-col sm:flex-row items-center gap-6 bg-[#F5F6FA]">
-                    <div className="w-32 h-40 rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200 shrink-0">
+                    <div className="w-32 h-32 rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200 shrink-0">
                       <img
-                        src={customPhoto || personalInfo.officialPhoto || '/subodh-rakesh.jpg'}
+                        src={customPhoto || subodhPhoto}
                         alt="Current Profile"
                         className="w-full h-full object-cover"
                       />

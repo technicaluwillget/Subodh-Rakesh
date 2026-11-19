@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Users, Sparkles, MapPin, Award, CheckCircle2, Camera } from 'lucide-react';
 import { personalInfo } from '../data/subhodhData';
+import subodhPhoto from '../assets/subodh-rakesh.jpg';
 
 export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoChange }) => {
-  const photoSrc = customPhoto || personalInfo.officialPhoto || '/subodh-rakesh.jpg';
+  // Always use the official uploaded photo of Subodh Rakesh
+  const photoSrc = customPhoto || subodhPhoto;
 
   return (
     <section 
@@ -110,7 +112,7 @@ export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoCh
 
           </motion.div>
 
-          {/* Right Column: High-Impact Profile Photo of Subhodh Rakesh */}
+          {/* Right Column: High-Impact Profile Photo of Subodh Rakesh (Exact 1:1 Aspect Ratio with zero cropping) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92, x: 35 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -122,53 +124,47 @@ export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoCh
               {/* Decorative Geometric Rings */}
               <div className="absolute -inset-3 rounded-[38px] bg-gradient-to-tr from-[#FF683D]/25 via-indigo-300/30 to-blue-300/25 blur-xl -z-10" />
               
-              {/* Subtle Floating Badge 1: Uttarakhand Pride */}
+              {/* Floating Badge 1: Uttarakhand Pride */}
               <div className="absolute -top-4 -left-4 z-20 px-4 py-2 rounded-2xl bg-white shadow-elevated border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#172033]">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                 <span>उत्तराखंड जनसेवक</span>
               </div>
 
-              {/* Subtle Floating Badge 2: Jwalapur Trust */}
+              {/* Floating Badge 2: Jwalapur Trust */}
               <div className="absolute -bottom-4 -right-4 z-20 px-4 py-2 rounded-2xl bg-white shadow-elevated border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#FF683D]">
                 <CheckCircle2 size={16} />
                 <span>ज्वालापुर का विश्वास</span>
               </div>
 
-              {/* Curved / Rounded Framing as requested */}
-              <div className="relative rounded-[32px] overflow-hidden bg-white p-2.5 shadow-elevated border border-white/80">
-                <div className="relative rounded-[24px] overflow-hidden bg-gradient-to-b from-blue-50 to-indigo-50 aspect-[4/4.8] flex items-center justify-center">
-                  
+              {/* Card Container for 1:1 Square Photo */}
+              <div className="relative rounded-[32px] overflow-hidden bg-white p-2.5 sm:p-3 shadow-elevated border border-white/80">
+                <div className="relative rounded-[24px] overflow-hidden aspect-square flex items-center justify-center bg-slate-50">
                   <img
                     src={photoSrc}
                     alt="सुबोध राकेश (Subhod Rakesh)"
-                    className="w-full h-full object-cover object-top hover:scale-[1.02] transition-transform duration-500"
-                    onError={(e) => {
-                      e.target.src = '/subodh-rakesh-portrait.svg';
-                    }}
+                    className="w-full h-full object-cover object-center hover:scale-[1.02] transition-transform duration-500"
                   />
+                </div>
 
-                  {/* Gradient shadow at bottom of photo */}
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#172033]/80 via-[#172033]/20 to-transparent flex items-end justify-between p-5 text-white">
-                    <div>
-                      <div className="text-xl font-bold font-heading">सुबोध राकेश</div>
-                      <div className="text-xs text-orange-200">जनता की सेवा, विकास का संकल्प</div>
-                    </div>
-                    
-                    {/* Quick photo update button */}
-                    <label 
-                      className="p-2 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md cursor-pointer transition"
-                      title="अपनी असली फोटो अपलोड करें (Upload Actual Photo)"
-                    >
-                      <Camera size={16} />
-                      <input 
-                        type="file" 
-                        accept="image/*" 
-                        className="hidden" 
-                        onChange={onPhotoChange} 
-                      />
-                    </label>
+                {/* Subtitle Bar below Photo (completely clean, zero overlay covering the photo text) */}
+                <div className="pt-3 pb-1 px-3 flex items-center justify-between">
+                  <div>
+                    <div className="text-lg font-bold text-[#172033] font-heading">सुबोध राकेश</div>
+                    <div className="text-xs text-[#FF683D] font-semibold">जनता की सेवा, विकास का संकल्प</div>
                   </div>
-
+                  
+                  <label 
+                    className="p-2 rounded-xl bg-slate-100 hover:bg-orange-100 text-slate-600 hover:text-[#FF683D] cursor-pointer transition shadow-2xs"
+                    title="फोटो बदलें (Update Photo)"
+                  >
+                    <Camera size={16} />
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      className="hidden" 
+                      onChange={onPhotoChange} 
+                    />
+                  </label>
                 </div>
               </div>
 

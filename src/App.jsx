@@ -15,6 +15,7 @@ import {
   initialNewsUpdates, 
   initialMediaGallery 
 } from './data/subhodhData';
+import subodhPhoto from './assets/subodh-rakesh.jpg';
 
 export function App() {
   const [adminOpen, setAdminOpen] = useState(false);
@@ -41,7 +42,7 @@ export function App() {
   });
 
   const [customPhoto, setCustomPhoto] = useState(() => {
-    return localStorage.getItem('sr_custom_photo') || '/subodh-rakesh.jpg';
+    return localStorage.getItem('sr_custom_photo') || subodhPhoto;
   });
 
   useEffect(() => {

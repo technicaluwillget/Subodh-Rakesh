@@ -13,6 +13,7 @@ import {
   Users
 } from 'lucide-react';
 import { aboutData, personalInfo } from '../data/subhodhData';
+import subodhPhoto from '../assets/subodh-rakesh.jpg';
 
 const pillarIcons = {
   MessageCircle,
@@ -22,7 +23,7 @@ const pillarIcons = {
 };
 
 export const About = ({ customPhoto }) => {
-  const photoSrc = customPhoto || personalInfo.officialPhoto || '/subodh-rakesh.jpg';
+  const photoSrc = customPhoto || subodhPhoto;
 
   return (
     <section id="about" className="py-24 bg-white relative">
@@ -55,16 +56,13 @@ export const About = ({ customPhoto }) => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 space-y-6"
           >
-            {/* Visual Portrait */}
-            <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 p-3 border border-slate-200/80 shadow-md">
-              <div className="rounded-2xl overflow-hidden aspect-[4/4.5] bg-white">
+            {/* Visual Portrait in 1:1 Aspect Ratio with zero cropping */}
+            <div className="rounded-3xl overflow-hidden bg-white p-3 border border-slate-200 shadow-md">
+              <div className="rounded-2xl overflow-hidden aspect-square bg-slate-50">
                 <img
                   src={photoSrc}
                   alt="सुबोध राकेश"
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    e.target.src = '/subodh-rakesh-portrait.svg';
-                  }}
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 
@@ -73,12 +71,12 @@ export const About = ({ customPhoto }) => {
                   {personalInfo.nameHindi}
                 </h3>
                 <p className="text-xs font-semibold text-[#FF683D] mt-0.5">
-                  {personalInfo.taglineHindi}
+                  {personalInfo.motto} • {personalInfo.taglineHindi}
                 </p>
               </div>
             </div>
 
-            {/* Structured Profile Table (Editable placeholders as requested) */}
+            {/* Structured Profile Table */}
             <div className="rounded-2xl bg-[#F5F6FA] p-6 border border-slate-200/80 space-y-3.5 text-xs sm:text-sm">
               <h4 className="font-bold text-[#172033] text-sm uppercase tracking-wider border-b border-slate-300 pb-2 flex items-center gap-2">
                 <CheckCircle size={16} className="text-[#FF683D]" />
