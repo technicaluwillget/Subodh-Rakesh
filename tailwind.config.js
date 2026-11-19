@@ -4,60 +4,40 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        bg: {
-          dark: '#0B0F19',
-          card: '#111827',
-          cardHover: '#172033',
-          border: 'rgba(255, 255, 255, 0.08)',
-          light: '#F8FAFC',
-          lightCard: '#FFFFFF',
-          lightBorder: '#E2E8F0',
+        navy: {
+          DEFAULT: '#172033',
+          dark: '#0F1626',
+          light: '#24324D',
         },
-        primary: {
-          DEFAULT: '#6366F1',
-          hover: '#4F46E5',
-          light: '#818CF8',
-          glow: 'rgba(99, 102, 241, 0.25)',
+        brandOrange: {
+          DEFAULT: '#FF683D',
+          hover: '#E55328',
+          light: '#FFF0EB',
+          glow: 'rgba(255, 104, 61, 0.25)',
         },
-        secondary: {
-          DEFAULT: '#06B6D4',
-          hover: '#0891B2',
-          light: '#22D3EE',
-          glow: 'rgba(6, 182, 212, 0.25)',
+        lavender: {
+          DEFAULT: '#E5E7FF',
+          light: '#F0F2FF',
+          dark: '#C8CCFF',
         },
-        darkText: {
-          main: '#F9FAFB',
-          muted: '#9CA3AF',
+        lightBlue: {
+          DEFAULT: '#DCEEFF',
+          light: '#EFF7FF',
+          soft: '#E8F3FF',
         },
-        lightText: {
-          main: '#0F172A',
-          muted: '#64748B',
-        }
+        lightGrey: '#F5F6FA',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        heading: ['Outfit', 'Inter', 'sans-serif'],
-      },
-      animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float-slow': 'float 6s ease-in-out infinite',
-        'float-delayed': 'float 7s ease-in-out 2s infinite',
-        'spin-slow': 'spin 18s linear infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-14px)' },
-        }
+        sans: ['"Noto Sans Devanagari"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['"Noto Sans Devanagari"', 'Outfit', 'sans-serif'],
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-        'glow-primary': '0 0 25px rgba(99, 102, 241, 0.35)',
-        'glow-cyan': '0 0 25px rgba(6, 182, 212, 0.35)',
+        'clean': '0 4px 20px -2px rgba(23, 32, 51, 0.06)',
+        'elevated': '0 12px 32px -4px rgba(23, 32, 51, 0.1)',
+        'orange-glow': '0 8px 24px -4px rgba(255, 104, 61, 0.35)',
       }
     },
   },

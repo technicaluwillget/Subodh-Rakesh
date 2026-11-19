@@ -1,115 +1,91 @@
-# Subhodh Rakesh — Senior Personal Portfolio
+# सुबोध राकेश (SUBHOD RAKESH) — आधिकारिक पर्सनल वेबसाइट
 
-A modern, responsive, and performant personal portfolio website engineered for **Subhodh Rakesh**. Built with modern frontend architecture, aesthetic glassmorphism, Framer Motion micro-interactions, dark/light theme support, and full accessibility.
-
----
-
-## 🚀 Tech Stack
-
-- **Framework:** React 18 + Vite
-- **Styling:** Tailwind CSS (with custom color tokens & glassmorphism utilities)
-- **Animations:** Framer Motion (respecting `prefers-reduced-motion`)
-- **Icons:** Lucide React
-- **Celebration Effects:** Canvas Confetti
-- **Typography:** Outfit (Display/Headings), Inter (Body), JetBrains Mono (Badges & Code)
+उत्तराखंड के हरिद्वार स्थित ज्वालापुर क्षेत्र के प्रतिष्ठित जननेता एवं समाजसेवी **सुबोध राकेश (Subhod Rakesh)** की आधुनिक, प्रीमियम और पूर्णतः रेस्पॉन्सिव आधिकारिक वेबसाइट।
 
 ---
 
-## 🎨 Color Palette & Design System
+## 🎨 डिज़ाइन एवं रंग संयोजन (Design & Color Palette)
 
-| Element | Dark Mode (Primary) | Light Mode |
-|---|---|---|
-| Background | `#0B0F19` | `#F8FAFC` |
-| Surface / Cards | `#111827` (Glassmorphism 70%) | `#FFFFFF` (Glassmorphism 85%) |
-| Primary Accent | `#6366F1` (Indigo Glow) | `#4F46E5` |
-| Secondary Accent | `#06B6D4` (Cyan Glow) | `#0891B2` |
-| Main Text | `#F9FAFB` | `#0F172A` |
-| Muted Text | `#9CA3AF` | `#64748B` |
+- **White:** `#FFFFFF` (साफ-सुथरा नेविगेशन बार एवं कार्ड्स)
+- **Dark Navy:** `#172033` (मुख्य हेडिंग्स एवं फ़ूटर)
+- **Orange:** `#FF683D` (हाइलाइट्स, बटन्स एवं ऐक्सेंट)
+- **Lavender:** `#E5E7FF` (हीरो सेक्शन ग्रेडिएंट)
+- **Light Blue:** `#DCEEFF` (हीरो सेक्शन ग्रेडिएंट)
+- **Light Grey:** `#F5F6FA` (बैकग्राउंड)
 
 ---
 
-## 📂 Project Structure
+## 🚀 मुख्य विशेषताएं एवं सेक्शन्स
 
-```text
-├── public/
-│   └── favicon.svg               # Vector brand logo favicon (SR)
-├── src/
-│   ├── components/
-│   │   ├── common/
-│   │   │   ├── Navbar.jsx        # Sticky glassmorphic navbar with active section spy, mobile drawer, theme toggle, resume button
-│   │   │   ├── Footer.jsx        # Branding, quick links, status indicator, back-to-top button
-│   │   │   ├── ParticleBackground.jsx # Lightweight interactive canvas particle system & ambient glows
-│   │   │   ├── SectionHeading.jsx# Reusable section heading with animated badge and gradient text
-│   │   │   └── ResumeModal.jsx   # Interactive resume viewer with print & text download + confetti
-│   │   └── sections/
-│   │       ├── Hero.jsx          # Typing role switcher, avatar halo, CTA buttons, metrics bar
-│   │       ├── About.jsx         # 2-column story, philosophy, core pillars, career goals
-│   │       ├── Skills.jsx        # Categorized skill cards with level badges and filter tabs
-│   │       ├── Experience.jsx    # Interactive vertical timeline (Work & Education tabs)
-│   │       ├── Projects.jsx      # Filterable project showcase with detail modals & GitHub links
-│   │       ├── Achievements.jsx  # Certifications, hackathon victories, and speaker keynotes
-│   │       └── Contact.jsx       # Validated contact form, 1-click email copy, status toasts
-│   ├── context/
-│   │   └── ThemeContext.jsx      # Dark/light mode state synced with document & localStorage
-│   ├── data/
-│   │   └── portfolioData.js      # Central configuration file for all portfolio content
-│   ├── App.jsx                   # Master application layout
-│   ├── index.css                 # Custom Tailwind base, components, and scrollbar styles
-│   └── main.jsx                  # React DOM mount point
-├── index.html                    # SEO tags, Google Fonts, and mobile viewport setup
-├── tailwind.config.js            # Extended design system tokens
-└── vite.config.js                # Vite build configuration
-```
+1. **White Sticky Navigation Bar:** 
+   - Logo / Name (SUBHOD RAKESH)
+   - लिंक्स: HOME, ABOUT US, PUBLIC ACTIVITIES, SOCIAL WORK, MEDIA, NEWS & UPDATES, CONTACT
+   - Orange बटन: **CONTACT NOW**
+   - मोबाइल रेस्पॉन्सिव हैमबर्गर मेन्यू
+   - एडमिन पोर्टल डायरेक्ट एक्सेस
+
+2. **Hero Section (दो कॉलम लेआउट):**
+   - Light Blue और Lavender का सॉफ्ट ग्रेडिएंट बैकग्राउंड
+   - हेडिंग: *"मिलिए सुबोध राकेश से"*
+   - सब-हेडिंग (Orange): *"जनता की सेवा, विकास का संकल्प"*
+   - परिचय एवं दो प्राथमिक बटन्स: *"मेरी प्रोफाइल देखें"* एवं *"सार्वजनिक गतिविधियां देखें"*
+   - सुबोध राकेश जी का कर्व्ड पोर्ट्रेट एवं फोटो अपलोड विकल्प
+
+3. **About Us (सुबोध राकेश के बारे में):**
+   - पारिवारिक पृष्ठभूमि (स्व. कैबिनेट मंत्री सुरेंद्र राकेश जी की जनसेवा परंपरा)
+   - शिक्षा, सार्वजनिक भूमिका, व्यक्तिगत परिचय
+   - विकास के चार मुख्य स्तंभ (जनसंवाद, युवा-महिला सशक्तिकरण, अवसंरचना, किसान-श्रमिक कल्याण)
+
+4. **सार्वजनिक गतिविधियां (Public Activities):**
+   - 7 श्रेणियां (जनसंपर्क, सामुदायिक बैठकें, विकास कार्य, चौपाल आदि)
+   - फ़िल्टर टैब्स एवं एक्टिविटी डिटेल मोडल
+
+5. **सामाजिक कार्य (Social Work):**
+   - 6 प्रमुख क्षेत्र (शिक्षा, युवा विकास, स्वास्थ्य, पर्यावरण, जनसहयोग, सामाजिक जागरूकता)
+
+6. **Photo और Video Gallery (Instagram स्टाइल):**
+   - रिस्पॉन्सिव इमेज ग्रिड, लाइटबॉक्स प्रीव्यू
+   - **FOLLOW ON INSTAGRAM** बटन (`https://www.instagram.com/subhod_rakesh_1`)
+
+7. **News & Updates (समाचार एवं घोषणाएं):**
+   - प्रेस विज्ञप्ति, समाचार एवं "पूरा समाचार पढ़ें" मोडल
+
+8. **Contact Section (हमसे संपर्क करें):**
+   - नाम: सुबोध राकेश
+   - मोबाइल: `9760691667` (कॉल बटन)
+   - ईमेल: `subodhrakesh1985@gmail.com` (ईमेल बटन)
+   - इंस्टाग्राम: `https://www.instagram.com/subhod_rakesh_1`
+   - फेसबुक: `https://www.facebook.com/share/1FTJbcuFFC/`
+   - स्थान: ज्वालापुर, हरिद्वार, उत्तराखंड
+   - लाइव वैलिडेटेड संपर्क फॉर्म
+
+9. **हमारा स्थान (Google Maps):**
+   - ज्वालापुर, हरिद्वार (उत्तराखंड) का स्वच्छ गूगल मैप्स एकीकरण
+
+10. **Admin Dashboard (एडमिन कंट्रोल पैनल):**
+    - सुरक्षित पासवर्ड लॉगिन (डिफ़ॉल्ट पासवर्ड: `admin123`)
+    - गतिविधियां जोड़ने व हटाने की सुविधा
+    - समाचार व प्रेस विज्ञप्ति जोड़ने की सुविधा
+    - फोटो गैलरी प्रबंधन
+    - सीधे कंप्यूटर से सुबोध राकेश जी की वास्तविक फोटो अपडेट करने की सुविधा
+    - नागरिकों द्वारा भेजे गए सभी संपर्क संदेश देखने की सुविधा
 
 ---
 
-## 🛠️ Quick Start
+## 💻 वेबसाइट कैसे चलाएं (How to Run)
 
-### 1. Start Development Server
 ```bash
+# 1. डेवलपमेंट सर्वर शुरू करें
 npm run dev
 ```
-Open `http://localhost:3000` (or the port shown in your terminal) in your browser.
+ब्राउज़र में `http://localhost:3000` खोलें।
 
-### 2. Build for Production
 ```bash
+# 2. प्रोडक्शन बिल्ड तैयार करें
 npm run build
 ```
-Creates an optimized, minified production bundle in `dist/`.
-
-### 3. Preview Production Build
-```bash
-npm run preview
-```
 
 ---
 
-## 📝 How to Customize Content
-
-All text, links, projects, and personal details are centralized in **[`src/data/portfolioData.js`](file:///c:/Users/Vishal/OneDrive/Desktop/Subodh%20Rakesh/src/data/portfolioData.js)**.
-
-1. **Update Name & Bio:** Edit `personalInfo` in `portfolioData.js`.
-2. **Add or Modify Skills:** Edit `skillsData.skills` in `portfolioData.js`.
-3. **Add Projects:** Add items to `projectsData` with your own demo and GitHub links.
-4. **Update Experience:** Adjust `timelineData.experience` and `timelineData.education`.
-5. **Connect Contact Form to a Backend:**
-   In `src/components/sections/Contact.jsx`, connect to Formspree, EmailJS, or your API route:
-   ```javascript
-   // Example Formspree integration:
-   await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-     method: "POST",
-     headers: { "Content-Type": "application/json" },
-     body: JSON.stringify(formData)
-   });
-   ```
-
----
-
-## ✨ Features & Polish
-
-- **Zero Layout Shifts & Zero Horizontal Overflow**
-- **Mobile First & Fully Responsive** (Mobile, Tablet, Laptop, 4K)
-- **Reduced Motion Support:** Respects system accessibility preferences
-- **Printable & Downloadable Resume:** Direct 1-click text and print preview
-- **Interactive Confetti Celebrations** on resume download and message dispatch
-- **SEO & Social Open Graph Ready**
+## 🔒 एडमिन क्रेडेंशियल्स
+- **डिफ़ॉल्ट एडमिन पासवर्ड:** `admin123`
