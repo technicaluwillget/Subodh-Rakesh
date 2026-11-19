@@ -198,50 +198,66 @@ export const initialMediaGallery = [
   {
     id: "med-1",
     type: "photo",
-    title: "ज्वालापुर में जनसंपर्क यात्रा के दौरान नागरिकों का स्नेह व आशीर्वाद",
+    title: "भारतीय जनता पार्टी के वरिष्ठ नेतृत्व से भेंट व अभिनंदन",
     category: "Public Events",
-    url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80",
+    url: "/gallery/gallery-7.jpg",
     date: "नवंबर 2024"
   },
   {
     id: "med-2",
     type: "photo",
-    title: "क्षेत्र के बुजुर्गों एवं ग्रामवासियों के साथ संवाद बैठक",
+    title: "क्षेत्र के वरिष्ठ बुजुर्गों के साथ चौपाल एवं आत्मीय संवाद",
     category: "Community Programs",
-    url: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80",
-    date: "अक्टूबर 2024"
+    url: "/gallery/gallery-8.jpg",
+    date: "नवंबर 2024"
   },
   {
     id: "med-3",
     type: "photo",
-    title: "पर्यावरण संरक्षण अभियान के अंतर्गत सघन पौधरोपण",
+    title: "सिद्ध पीठ मंदिर में दर्शन-पूजन एवं युवाओं के साथ जनमिलन",
     category: "Social Activities",
-    url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80",
-    date: "सितंबर 2024"
+    url: "/gallery/gallery-5.jpg",
+    date: "2024"
   },
   {
     id: "med-4",
     type: "photo",
-    title: "युवा प्रतिभा सम्मान समारोह एवं खेल महोत्सव",
-    category: "Public Events",
-    url: "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=900&q=80",
-    date: "अगस्त 2024"
+    title: "स्थानीय नागरिकों एवं क्षेत्रवासियों से प्रत्यक्ष संवाद व जनसंपर्क",
+    category: "Community Programs",
+    url: "/gallery/gallery-4.jpg",
+    date: "2024"
   },
   {
     id: "med-5",
     type: "photo",
-    title: "निशुल्क चिकित्सा एवं स्वास्थ्य जांच शिविर",
-    category: "Social Activities",
-    url: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=900&q=80",
-    date: "जुलाई 2024"
+    title: "ज्वालापुर में सहयोगियों व प्रबुद्धजनों के साथ विचार-विमर्श बैठक",
+    category: "Public Events",
+    url: "/gallery/gallery-1.jpg",
+    date: "2024"
   },
   {
     id: "med-6",
     type: "photo",
-    title: "हरिद्वार में धार्मिक एवं सांस्कृतिक उत्सव में जनसहभागिता",
-    category: "Community Programs",
-    url: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=900&q=80",
-    date: "जून 2024"
+    title: "पारिवारिक एवं सामाजिक वैवाहिक समारोह में वर-वधू को आशीर्वाद",
+    category: "Social Activities",
+    url: "/gallery/gallery-2.jpg",
+    date: "2024"
+  },
+  {
+    id: "med-7",
+    type: "photo",
+    title: "युवा साथियों एवं कार्यकर्ताओं के साथ संगठनात्मक बैठक",
+    category: "Public Events",
+    url: "/gallery/gallery-3.jpg",
+    date: "2024"
+  },
+  {
+    id: "med-8",
+    type: "photo",
+    title: "जन्मदिन एवं सामाजिक उत्सव के अवसर पर कार्यकर्ताओं के साथ आत्मीय मिलन",
+    category: "Social Activities",
+    url: "/gallery/gallery-6.jpg",
+    date: "2024"
   }
 ];
 
@@ -264,7 +280,7 @@ export const initialNewsUpdates = [
     category: "धार्मिक एवं सामाजिक कार्यक्रम",
     tag: "धार्मिक एवं सामाजिक कार्यक्रम",
     isLatest: true,
-    image: "https://images.unsplash.com/photo-1545232979-fbf68fe9b1af?auto=format&fit=crop&w=1200&q=80",
+    image: "/gallery/gallery-8.jpg",
     excerpt: "संत शिरोमणि गुरु रविदास जी महाराज के भव्य मंदिर, गढ़मीरपुर में ब्रह्मलीन महात्मा ब्रजेश दास जी की पुण्यतिथि के पावन अवसर पर आयोजित भव्य एवं विशाल सत्संग कार्यक्रम में सम्मिलित होकर संत-महात्माओं का आशीर्वाद प्राप्त किया।",
     fullContent: `संत शिरोमणि गुरु रविदास जी महाराज के भव्य मंदिर, गढ़मीरपुर में ब्रह्मलीन महात्मा ब्रजेश दास जी की पुण्यतिथि के पावन अवसर पर आयोजित भव्य एवं विशाल सत्संग कार्यक्रम में सम्मिलित होकर संत-महात्माओं का आशीर्वाद प्राप्त किया।
 

@@ -46,7 +46,20 @@ export function App() {
 
   const [galleryItems, setGalleryItems] = useState(() => {
     const saved = localStorage.getItem('sr_gallery');
-    return saved ? JSON.parse(saved) : initialMediaGallery;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        // Migrate to real uploaded photos if old unsplash images were cached
+        if (parsed.some(item => item.url && item.url.includes('unsplash'))) {
+          localStorage.setItem('sr_gallery', JSON.stringify(initialMediaGallery));
+          return initialMediaGallery;
+        }
+        return parsed;
+      } catch (e) {
+        return initialMediaGallery;
+      }
+    }
+    return initialMediaGallery;
   });
 
   const [messages, setMessages] = useState(() => {
