@@ -402,7 +402,7 @@ export const AdminDashboard = ({
                   <div className="p-6 rounded-2xl border border-slate-200 flex flex-col sm:flex-row items-center gap-6 bg-[#F5F6FA]">
                     <div className="w-32 h-40 rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200 shrink-0">
                       <img
-                        src={customPhoto || '/subodh-rakesh-portrait.svg'}
+                        src={customPhoto || personalInfo.officialPhoto || '/subodh-rakesh.jpg'}
                         alt="Current Profile"
                         className="w-full h-full object-cover"
                       />

@@ -41,7 +41,7 @@ export function App() {
   });
 
   const [customPhoto, setCustomPhoto] = useState(() => {
-    return localStorage.getItem('sr_custom_photo') || null;
+    return localStorage.getItem('sr_custom_photo') || '/subodh-rakesh.jpg';
   });
 
   useEffect(() => {

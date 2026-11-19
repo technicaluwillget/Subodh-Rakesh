@@ -22,7 +22,7 @@ const pillarIcons = {
 };
 
 export const About = ({ customPhoto }) => {
-  const photoSrc = customPhoto || '/subodh-rakesh-portrait.svg';
+  const photoSrc = customPhoto || personalInfo.officialPhoto || '/subodh-rakesh.jpg';
 
   return (
     <section id="about" className="py-24 bg-white relative">

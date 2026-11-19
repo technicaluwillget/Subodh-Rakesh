@@ -4,7 +4,7 @@ import { ArrowRight, Users, Sparkles, MapPin, Award, CheckCircle2, Camera } from
 import { personalInfo } from '../data/subhodhData';
 
 export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoChange }) => {
-  const photoSrc = customPhoto || '/subodh-rakesh-portrait.svg';
+  const photoSrc = customPhoto || personalInfo.officialPhoto || '/subodh-rakesh.jpg';
 
   return (
     <section 
@@ -26,12 +26,21 @@ export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoCh
             transition={{ duration: 0.7 }}
             className="lg:col-span-7 flex flex-col items-start text-left"
           >
-            {/* Top Intro Tag */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-indigo-100 shadow-xs mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#FF683D] animate-ping" />
-              <span className="text-xs sm:text-sm font-bold text-[#172033]">
-                {personalInfo.introTitle}
-              </span>
+            {/* Top Badges */}
+            <div className="flex flex-wrap items-center gap-2 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-indigo-100 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#FF683D] animate-ping" />
+                <span className="text-xs sm:text-sm font-bold text-[#172033]">
+                  {personalInfo.introTitle}
+                </span>
+              </div>
+
+              {personalInfo.motto && (
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#FF683D] text-xs font-extrabold uppercase tracking-wider shadow-xs">
+                  <Sparkles size={13} />
+                  <span>{personalInfo.motto}</span>
+                </div>
+              )}
             </div>
 
             {/* Main Heading */}
@@ -40,10 +49,15 @@ export const Hero = ({ onProfileClick, onActivitiesClick, customPhoto, onPhotoCh
             </h1>
 
             {/* Orange Highlight Sub-heading */}
-            <div className="mt-3 sm:mt-4">
+            <div className="mt-3 sm:mt-4 flex flex-wrap items-baseline gap-3">
               <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#FF683D] drop-shadow-xs">
                 {personalInfo.taglineHindi}
               </span>
+              {personalInfo.slogan && (
+                <span className="text-sm sm:text-base font-bold text-slate-600 bg-white/70 px-3 py-1 rounded-lg border border-slate-200">
+                  {personalInfo.slogan}
+                </span>
+              )}
             </div>
 
             {/* Intro Paragraph */}
