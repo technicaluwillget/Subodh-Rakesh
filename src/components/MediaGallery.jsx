@@ -4,18 +4,17 @@ import { Instagram, Eye, Play, X, ExternalLink, Calendar, Tag } from 'lucide-rea
 import { personalInfo } from '../data/subhodhData';
 
 const categories = [
-  'All',
-  'Public Events',
-  'Social Activities',
-  'Community Programs',
-  'Video Gallery'
+  { id: 'all', label: 'सभी तस्वीरें (All Photos)' },
+  { id: 'Public Events', label: 'सार्वजनिक कार्यक्रम (Public Events)' },
+  { id: 'Social Activities', label: 'सामाजिक गतिविधियां (Social Activities)' },
+  { id: 'Community Programs', label: 'सामुदायिक जनसंवाद (Community Programs)' },
 ];
 
 export const MediaGallery = ({ galleryItems }) => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('all');
   const [lightboxItem, setLightboxItem] = useState(null);
 
-  const filteredItems = activeFilter === 'All'
+  const filteredItems = activeFilter === 'all'
     ? galleryItems
     : galleryItems.filter(item => item.category === activeFilter);
 
