@@ -2,13 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Users, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
 import { personalInfo } from '../data/subhodhData';
-import subodhPhoto from '../assets/subodh-rakesh.jpg';
+import subodhHomePhoto from '../assets/subodh-namaste.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Hero = ({ onProfileClick, onActivitiesClick }) => {
   const { language, t } = useLanguage();
   return (
-    <section 
+    <section
       id="home"
       className="relative min-h-[92vh] pt-32 pb-20 lg:pt-36 lg:pb-28 hero-gradient overflow-hidden flex items-center"
     >
@@ -19,9 +19,9 @@ export const Hero = ({ onProfileClick, onActivitiesClick }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Introductions, Headings & CTAs */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -35 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -117,10 +117,10 @@ export const Hero = ({ onProfileClick, onActivitiesClick }) => {
             className="lg:col-span-5 flex flex-col items-center justify-center lg:items-end"
           >
             <div className="relative w-full max-w-md">
-              
+
               {/* Outer Ambient Glow matching the orange and saffron tones */}
               <div className="absolute -inset-2 rounded-[36px] bg-gradient-to-tr from-[#FF683D]/30 via-amber-300/25 to-blue-300/25 blur-xl -z-10" />
-              
+
               {/* Floating Badge 1: Uttarakhand Pride */}
               <div className="absolute -top-3.5 -left-3.5 z-20 px-3.5 py-1.5 rounded-xl bg-white shadow-elevated border border-slate-100 flex items-center gap-2 text-xs font-bold text-[#172033]">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -133,13 +133,13 @@ export const Hero = ({ onProfileClick, onActivitiesClick }) => {
                 <span>ज्वालापुर का विश्वास</span>
               </div>
 
-              {/* Perfectly Fitted Frame for the 1:1 Square Portrait */}
+              {/* Perfectly Fitted Frame for Subodh Rakesh Namaste Portrait */}
               <div className="relative rounded-[32px] overflow-hidden bg-white p-2 shadow-elevated border border-white">
-                <div className="relative rounded-[26px] overflow-hidden aspect-square flex items-center justify-center bg-slate-100 shadow-inner">
+                <div className="relative rounded-[26px] overflow-hidden aspect-[4/4.8] flex items-center justify-center bg-slate-100 shadow-inner">
                   <img
-                    src={subodhPhoto}
+                    src={subodhHomePhoto}
                     alt="सुबोध राकेश (Subhod Rakesh)"
-                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.01]"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-[1.01]"
                     loading="eager"
                   />
                 </div>
