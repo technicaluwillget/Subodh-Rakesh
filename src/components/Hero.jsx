@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Users, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
 import { personalInfo } from '../data/subhodhData';
 import subodhPhoto from '../assets/subodh-rakesh.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Hero = ({ onProfileClick, onActivitiesClick }) => {
+  const { language, t } = useLanguage();
   return (
     <section 
       id="home"
@@ -30,44 +32,44 @@ export const Hero = ({ onProfileClick, onActivitiesClick }) => {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-indigo-100 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-[#FF683D] animate-ping" />
                 <span className="text-xs sm:text-sm font-bold text-[#172033]">
-                  {personalInfo.introTitle}
+                  {t(personalInfo.introTitle, personalInfo.introTitleEn)}
                 </span>
               </div>
 
               {personalInfo.motto && (
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#FF683D] text-xs font-extrabold uppercase tracking-wider shadow-xs">
                   <Sparkles size={13} />
-                  <span>{personalInfo.motto}</span>
+                  <span>{t(personalInfo.motto, personalInfo.mottoEn)}</span>
                 </div>
               )}
             </div>
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#172033] leading-[1.15]">
-              {personalInfo.heroHeading}
+              {t(personalInfo.heroHeading, personalInfo.heroHeadingEn)}
             </h1>
 
             {/* Orange Highlight Sub-heading */}
             <div className="mt-3 sm:mt-4 flex flex-wrap items-baseline gap-3">
               <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#FF683D] drop-shadow-xs">
-                {personalInfo.taglineHindi}
+                {t(personalInfo.taglineHindi, personalInfo.taglineEnglish)}
               </span>
               {personalInfo.slogan && (
                 <span className="text-sm sm:text-base font-bold text-slate-700 bg-white/80 px-3.5 py-1 rounded-lg border border-slate-200 shadow-2xs">
-                  {personalInfo.slogan}
+                  {t(personalInfo.slogan, personalInfo.sloganEn)}
                 </span>
               )}
             </div>
 
             {/* Intro Paragraph */}
             <p className="mt-6 text-base sm:text-lg text-slate-700 max-w-xl leading-relaxed font-normal">
-              {personalInfo.heroDescription}
+              {t(personalInfo.heroDescription, personalInfo.heroDescriptionEn)}
             </p>
 
             {/* Key Location Badge */}
             <div className="mt-4 flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 bg-white/70 px-3.5 py-1.5 rounded-xl border border-slate-200/80 shadow-2xs">
               <MapPin size={16} className="text-[#FF683D]" />
-              <span>ज्वालापुर / हरिद्वार, उत्तराखंड</span>
+              <span>{t('ज्वालापुर / हरिद्वार, उत्तराखंड', 'Jwalapur / Haridwar, Uttarakhand')}</span>
             </div>
 
             {/* Two Primary Buttons */}
@@ -77,7 +79,7 @@ export const Hero = ({ onProfileClick, onActivitiesClick }) => {
                 onClick={onProfileClick}
                 className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#FF683D] hover:bg-[#E55328] shadow-lg shadow-orange-500/30 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>मेरी प्रोफाइल देखें</span>
+                <span>{t('मेरी प्रोफाइल देखें', 'View Profile')}</span>
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
 
@@ -87,7 +89,7 @@ export const Hero = ({ onProfileClick, onActivitiesClick }) => {
                 className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-[#172033] bg-white hover:bg-slate-50 border border-slate-200 shadow-md shadow-slate-200/50 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Users size={18} className="text-[#FF683D]" />
-                <span>सार्वजनिक गतिविधियां देखें</span>
+                <span>{t('सार्वजनिक गतिविधियां देखें', 'View Activities')}</span>
               </button>
             </div>
 
@@ -99,7 +101,7 @@ export const Hero = ({ onProfileClick, onActivitiesClick }) => {
                     {stat.value}
                   </div>
                   <div className="text-xs text-slate-600 font-medium mt-0.5">
-                    {stat.label}
+                    {language === 'en' && stat.labelEn ? stat.labelEn : stat.label}
                   </div>
                 </div>
               ))}

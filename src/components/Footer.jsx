@@ -10,8 +10,10 @@ import {
   CheckCircle2 
 } from 'lucide-react';
 import { personalInfo } from '../data/subhodhData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Footer = () => {
+  const { language, t } = useLanguage();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -20,13 +22,13 @@ export const Footer = () => {
   };
 
   const navLinks = [
-    { href: '#home', label: 'Home (मुख्य पृष्ठ)' },
-    { href: '#about', label: 'About Us (परिचय)' },
-    { href: '#activities', label: 'Public Activities (सार्वजनिक गतिविधियां)' },
-    { href: '#social-work', label: 'Social Work (सामाजिक कार्य)' },
-    { href: '#media', label: 'Media Gallery (फोटो व वीडियो)' },
-    { href: '#news', label: 'News & Updates (समाचार)' },
-    { href: '#contact', label: 'Contact Us (संपर्क करें)' },
+    { href: '#home', label: t('मुख्य पृष्ठ', 'Home') },
+    { href: '#about', label: t('परिचय', 'About Us') },
+    { href: '#activities', label: t('सार्वजनिक गतिविधियां', 'Public Activities') },
+    { href: '#social-work', label: t('सामाजिक कार्य', 'Social Work') },
+    { href: '#media', label: t('फोटो व वीडियो', 'Media Gallery') },
+    { href: '#news', label: t('समाचार', 'News & Updates') },
+    { href: '#contact', label: t('संपर्क करें', 'Contact Us') },
   ];
 
   return (

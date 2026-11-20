@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Instagram, Eye, Play, X, ExternalLink, Calendar, Tag } from 'lucide-react';
 import { personalInfo } from '../data/subhodhData';
+import { useLanguage } from '../context/LanguageContext';
 
 const categories = [
-  { id: 'all', label: 'सभी तस्वीरें (All Photos)' },
-  { id: 'Public Events', label: 'सार्वजनिक कार्यक्रम (Public Events)' },
-  { id: 'Social Activities', label: 'सामाजिक गतिविधियां (Social Activities)' },
-  { id: 'Community Programs', label: 'सामुदायिक जनसंवाद (Community Programs)' },
+  { id: 'all', label: 'सभी तस्वीरें (All Photos)', labelHi: 'सभी तस्वीरें', labelEn: 'All Photos' },
+  { id: 'Public Events', label: 'सार्वजनिक कार्यक्रम', labelHi: 'सार्वजनिक कार्यक्रम', labelEn: 'Public Events' },
+  { id: 'Social Activities', label: 'सामाजिक गतिविधियां', labelHi: 'सामाजिक गतिविधियां', labelEn: 'Social Activities' },
+  { id: 'Community Programs', label: 'सामुदायिक जनसंवाद', labelHi: 'सामुदायिक जनसंवाद', labelEn: 'Community Programs' },
 ];
 
 export const MediaGallery = ({ galleryItems }) => {
+  const { language, t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('all');
   const [lightboxItem, setLightboxItem] = useState(null);
 
@@ -27,15 +29,15 @@ export const MediaGallery = ({ galleryItems }) => {
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-50 border border-pink-200 text-pink-700 text-xs font-bold uppercase tracking-wider mb-3">
               <Instagram size={14} className="text-pink-600" />
-              <span>इंस्टाग्राम एवं दृश्य मीडिया गैलरी</span>
+              <span>{t('इंस्टाग्राम एवं दृश्य मीडिया गैलरी', 'Instagram & Visual Media Gallery')}</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#172033]">
-              Photo और Video <span className="text-[#FF683D]">Gallery</span>
+              {t('फोटो और वीडियो', 'Photo & Video')} <span className="text-[#FF683D]">{t('गैलरी', 'Gallery')}</span>
             </h2>
 
             <p className="mt-3 text-base text-slate-600 font-medium">
-              सार्वजनिक कार्यक्रमों, जनसंपर्क अभियानों और सामाजिक गतिविधियों की चुनिंदा झलकियां।
+              {t('सार्वजनिक कार्यक्रमों, जनसंपर्क अभियानों और सामाजिक गतिविधियों की चुनिंदा झलकियां।', 'Selected glimpses of public programs, mass outreach, and social welfare activities.')}
             </p>
           </div>
 
@@ -47,7 +49,7 @@ export const MediaGallery = ({ galleryItems }) => {
             className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-pink-500/20 hover:scale-105 transition-transform shrink-0"
           >
             <Instagram size={18} />
-            <span>FOLLOW ON INSTAGRAM</span>
+            <span>{t('इंस्टाग्राम पर फॉलो करें', 'FOLLOW ON INSTAGRAM')}</span>
             <ExternalLink size={14} />
           </a>
         </div>

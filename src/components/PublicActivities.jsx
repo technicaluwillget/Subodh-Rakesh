@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, MapPin, CheckCircle, ArrowRight, X, ExternalLink } from 'lucide-react';
 import { publicActivitiesCategories } from '../data/subhodhData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const PublicActivities = ({ activities }) => {
+  const { language, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedActivity, setSelectedActivity] = useState(null);
 
@@ -19,15 +21,15 @@ export const PublicActivities = ({ activities }) => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#172033] text-xs font-bold uppercase tracking-wider mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-            <span>क्षेत्रीय जनसेवा व जनसंवाद</span>
+            <span>{t('क्षेत्रीय जनसेवा व जनसंवाद', 'Regional Public Welfare & Outreach')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#172033]">
-            सार्वजनिक गतिविधियां <span className="text-[#FF683D]">(Public Activities)</span>
+            {t('सार्वजनिक गतिविधियां', 'Public Activities')} <span className="text-[#FF683D]">({t('जनसेवा कार्य', 'Community Work')})</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 font-medium">
-            ज्वालापुर एवं हरिद्वार क्षेत्र में जनसंपर्क, सामुदायिक बैठकें, जनसमस्या निवारण एवं स्थानीय विकास कार्य।
+            {t('ज्वालापुर एवं हरिद्वार क्षेत्र में जनसंपर्क, सामुदायिक बैठकें, जनसमस्या निवारण एवं स्थानीय विकास कार्य।', 'Public outreach, community meetings, grievance redressal, and local development work in Jwalapur & Haridwar.')}
           </p>
         </div>
 
@@ -61,14 +63,14 @@ export const PublicActivities = ({ activities }) => {
               <Calendar size={28} />
             </div>
             <h3 className="text-xl sm:text-2xl font-extrabold text-[#172033] mb-2 font-heading">
-              वर्तमान में कोई नई गतिविधि सूचीबद्ध नहीं है
+              {t('वर्तमान में कोई नई गतिविधि सूचीबद्ध नहीं है', 'No New Activities Listed Currently')}
             </h3>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md mx-auto mb-6">
-              ज्वालापुर एवं हरिद्वार क्षेत्र में आगामी सार्वजनिक कार्यक्रमों, जनसंवाद व विकास कार्यों का विवरण शीघ्र ही यहाँ साझा किया जाएगा।
+              {t('ज्वालापुर एवं हरिद्वार क्षेत्र में आगामी सार्वजनिक कार्यक्रमों, जनसंवाद व विकास कार्यों का विवरण शीघ्र ही यहाँ साझा किया जाएगा।', 'Upcoming public programs, mass interactions, and regional developmental initiatives in Jwalapur & Haridwar will be updated here shortly.')}
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>क्षेत्रीय जनसेवा व जनसंपर्क कार्य निरंतर जारी है</span>
+              <span>{t('क्षेत्रीय जनसेवा व जनसंपर्क कार्य निरंतर जारी है', 'Public welfare & regional outreach initiatives are ongoing')}</span>
             </div>
           </div>
         ) : (

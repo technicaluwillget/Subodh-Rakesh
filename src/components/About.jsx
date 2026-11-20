@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { aboutData, personalInfo } from '../data/subhodhData';
 import subodhPhoto from '../assets/subodh-rakesh.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 const pillarIcons = {
   MessageCircle,
@@ -23,6 +24,7 @@ const pillarIcons = {
 };
 
 export const About = () => {
+  const { language, t } = useLanguage();
   return (
     <section id="about" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,15 +33,15 @@ export const About = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#FF683D] text-xs font-bold uppercase tracking-wider mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF683D]" />
-            <span>व्यक्तिगत एवं सार्वजनिक जीवन</span>
+            <span>{t('व्यक्तिगत एवं सार्वजनिक जीवन', 'Personal & Public Life')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#172033]">
-            {aboutData.title}
+            {t(aboutData.title, 'About Subodh Rakesh')}
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
-            {aboutData.subtitle}
+            {t(aboutData.subtitle, 'Steadfast on the path of public welfare, a symbol of trust for the people of Haridwar & Jwalapur')}
           </p>
         </div>
 

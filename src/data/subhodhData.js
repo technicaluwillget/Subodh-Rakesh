@@ -10,18 +10,25 @@ export const personalInfo = {
   taglineHindi: "जनता की सेवा, विकास का संकल्प",
   taglineEnglish: "Dedicated to Public Welfare & Regional Progress",
   motto: "सेवा • समर्पण • संघर्ष",
+  mottoEn: "Service • Dedication • Struggle",
   slogan: "सबका साथ, सबका विकास",
+  sloganEn: "Together with all, Development for all",
   officialPhoto: "/subodh-rakesh.jpg",
   introTitle: "सुबोध राकेश की आधिकारिक वेबसाइट पर आपका स्वागत है",
+  introTitleEn: "Welcome to the Official Website of Subodh Rakesh",
   heroHeading: "मिलिए सुबोध राकेश से",
+  heroHeadingEn: "Meet Subodh Rakesh",
   heroDescription: "सुबोध राकेश के सार्वजनिक जीवन, सामाजिक गतिविधियों, जनसंपर्क, सामुदायिक कार्यों और ज्वालापुर क्षेत्र से संबंधित नवीनतम जानकारियों के बारे में जानें।",
+  heroDescriptionEn: "Discover the public life, social initiatives, community outreach, regional welfare, and latest developmental updates of Subodh Rakesh in Jwalapur & Haridwar.",
   
   // Contacts
   email: "subodhrakesh1985@gmail.com",
   phone: "9760691667",
   whatsapp: "9760691667",
   location: "ज्वालापुर, हरिद्वार, उत्तराखंड, भारत",
+  locationEn: "Jwalapur, Haridwar, Uttarakhand, India",
   area: "ज्वालापुर / हरिद्वार विधानसभा क्षेत्र",
+  areaEn: "Jwalapur / Haridwar Assembly Constituency",
   
   // Social Links
   instagram: "https://www.instagram.com/subodh_rakesh_official?jplx=MXQ5cTZ2MWc5eXRpZw==",
@@ -30,10 +37,10 @@ export const personalInfo = {
   
   // Key Stats
   stats: [
-    { label: "वर्षों का जनसेवा अनुभव", value: "15+", icon: "Clock" },
-    { label: "सार्वजनिक बैठकें एवं कार्यक्रम", value: "1,200+", icon: "Users" },
-    { label: "गांव एवं बस्तियों में जनसंपर्क", value: "250+", icon: "MapPin" },
-    { label: "सामाजिक कल्याणकारी अभियान", value: "150+", icon: "HeartHandshake" }
+    { label: "वर्षों का जनसेवा अनुभव", labelEn: "Years of Public Service", value: "15+", icon: "Clock" },
+    { label: "सार्वजनिक बैठकें एवं कार्यक्रम", labelEn: "Public Meetings & Gatherings", value: "1,200+", icon: "Users" },
+    { label: "गांव एवं बस्तियों में जनसंपर्क", labelEn: "Villages & Outreach", value: "250+", icon: "MapPin" },
+    { label: "सामाजिक कल्याणकारी अभियान", labelEn: "Social Welfare Campaigns", value: "150+", icon: "HeartHandshake" }
   ]
 };
 

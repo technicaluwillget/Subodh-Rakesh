@@ -15,8 +15,10 @@ import {
   Archive
 } from 'lucide-react';
 import { newsCategories } from '../data/subhodhData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const NewsUpdates = ({ newsItems }) => {
+  const { language, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('सभी समाचार');
   const [viewType, setViewType] = useState('all'); // 'all', 'latest', 'previous'
   const [selectedNews, setSelectedNews] = useState(null);
@@ -59,15 +61,15 @@ export const NewsUpdates = ({ newsItems }) => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#FF683D] text-xs font-bold uppercase tracking-wider mb-3">
             <Newspaper size={14} className="text-[#FF683D]" />
-            <span>आधिकारिक समाचार एवं प्रेस कवरेज</span>
+            <span>{t('आधिकारिक समाचार एवं प्रेस कवरेज', 'Official News & Press Coverage')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#172033]">
-            News और <span className="text-[#FF683D]">Updates</span>
+            {t('समाचार एवं', 'News &')} <span className="text-[#FF683D]">{t('अपडेट्स', 'Updates')}</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 font-medium">
-            ज्वालापुर, हरिद्वार एवं उत्तराखण्ड के सामाजिक, धार्मिक और सार्वजनिक जीवन से संबंधित प्रामाणिक समाचार।
+            {t('ज्वालापुर, हरिद्वार एवं उत्तराखण्ड के सामाजिक, धार्मिक और सार्वजनिक जीवन से संबंधित प्रामाणिक समाचार।', 'Authentic news related to social, cultural, and public life in Jwalapur, Haridwar & Uttarakhand.')}
           </p>
         </div>
 
@@ -82,7 +84,7 @@ export const NewsUpdates = ({ newsItems }) => {
                   : 'text-slate-600 hover:text-[#172033]'
               }`}
             >
-              <span>सभी समाचार ({categoryFiltered.length})</span>
+              <span>{t('सभी समाचार', 'All News')} ({categoryFiltered.length})</span>
             </button>
 
             <button
@@ -94,7 +96,7 @@ export const NewsUpdates = ({ newsItems }) => {
               }`}
             >
               <Flame size={14} />
-              <span>नवीनतम समाचार (Latest)</span>
+              <span>{t('नवीनतम समाचार', 'Latest News')}</span>
             </button>
 
             <button
@@ -106,7 +108,7 @@ export const NewsUpdates = ({ newsItems }) => {
               }`}
             >
               <Archive size={14} />
-              <span>पूर्व समाचार (Archive)</span>
+              <span>{t('पूर्व समाचार', 'Archived News')}</span>
             </button>
           </div>
         </div>
