@@ -24,8 +24,9 @@ export const personalInfo = {
   area: "ज्वालापुर / हरिद्वार विधानसभा क्षेत्र",
   
   // Social Links
-  instagram: "https://www.instagram.com/subhod_rakesh_1",
-  facebook: "https://www.facebook.com/share/1FTJbcuFFC/",
+  instagram: "https://www.instagram.com/subodh_rakesh_official?jplx=MXQ5cTZ2MWc5eXRpZw==",
+  instagramHandle: "@subodh_rakesh_official",
+  facebook: "https://www.facebook.com/share/1EDARime4P/",
   
   // Key Stats
   stats: [

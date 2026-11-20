@@ -132,7 +132,7 @@ export const MediaGallery = ({ galleryItems }) => {
             </div>
             <div>
               <div className="text-sm sm:text-base font-bold text-[#172033]">
-                @subhod_rakesh_1
+                {personalInfo.instagramHandle || '@subodh_rakesh_official'}
               </div>
               <div className="text-xs text-slate-500 font-medium">
                 सुबोध राकेश के सभी दैनिक वीडियो, रील और लाइव अपडेट इंस्टाग्राम पर देखें।
