@@ -15,8 +15,10 @@ import {
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { personalInfo } from '../data/subhodhData';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Contact = ({ onNewMessage }) => {
+  const { language, t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -214,32 +216,51 @@ export const Contact = ({ onNewMessage }) => {
 
               </div>
 
-              {/* Social Channels Required: Instagram & Facebook */}
+              {/* Social Channels: Instagram, Facebook Page & Facebook Profile */}
               <div className="pt-4 border-t border-slate-100">
                 <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
-                  सोशल मीडिया पर जुड़ें
+                  {t('सोशल मीडिया पर जुड़ें', 'Connect on Social Media')}
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col gap-2.5">
                   <a
                     href={personalInfo.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 p-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold shadow-xs hover:scale-102 transition"
+                    className="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white text-xs font-bold shadow-xs hover:scale-[1.01] transition"
                   >
-                    <Instagram size={16} />
-                    <span>इंस्टाग्राम (Instagram)</span>
+                    <div className="flex items-center gap-2">
+                      <Instagram size={16} />
+                      <span>{t('इंस्टाग्राम प्रोफाइल', 'Instagram Profile')}</span>
+                    </div>
+                    <span className="text-[11px] bg-white/20 px-2 py-0.5 rounded-md font-semibold font-sans">
+                      {personalInfo.instagramHandle || '@subodh_rakesh_official'}
+                    </span>
                   </a>
 
-                  <a
-                    href={personalInfo.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#1877F2] text-white text-xs font-bold shadow-xs hover:scale-102 transition"
-                  >
-                    <Facebook size={16} />
-                    <span>फेसबुक (Facebook)</span>
-                  </a>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <a
+                      href={personalInfo.facebookPage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#1877F2] text-white text-xs font-bold shadow-xs hover:bg-[#166fe5] hover:scale-[1.01] transition"
+                      title="Facebook Official Page"
+                    >
+                      <Facebook size={16} />
+                      <span>{t('फेसबुक पेज (Official Page)', 'Facebook Page (Official)')}</span>
+                    </a>
+
+                    <a
+                      href={personalInfo.facebookProfile}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#0d65d9] text-white text-xs font-bold shadow-xs hover:bg-[#0b58be] hover:scale-[1.01] transition border border-blue-400/30"
+                      title="Facebook Personal Profile"
+                    >
+                      <Facebook size={16} />
+                      <span>{t('फेसबुक अकाउंट (Profile)', 'Facebook Profile (Account)')}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 

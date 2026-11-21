@@ -110,7 +110,7 @@ export const Footer = () => {
             </div>
 
             <div className="pt-3">
-              <div className="text-xs font-semibold text-slate-400 mb-2">सोशल मीडिया:</div>
+              <div className="text-xs font-semibold text-slate-400 mb-2">{t('सोशल मीडिया:', 'Social Media:')}</div>
               <div className="flex items-center gap-2.5">
                 <a
                   href={personalInfo.instagram}
@@ -118,15 +118,27 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-xl bg-slate-800 hover:bg-pink-600 text-white transition shadow-xs"
                   aria-label="Instagram"
+                  title="Instagram Profile"
                 >
                   <Instagram size={17} />
                 </a>
                 <a
-                  href={personalInfo.facebook}
+                  href={personalInfo.facebookPage}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-xl bg-slate-800 hover:bg-[#1877F2] text-white transition shadow-xs"
-                  aria-label="Facebook"
+                  aria-label="Facebook Official Page"
+                  title="Facebook Page (ऑफिशियल पेज)"
+                >
+                  <Facebook size={17} />
+                </a>
+                <a
+                  href={personalInfo.facebookProfile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-xl bg-slate-800 hover:bg-[#0d65d9] text-white transition shadow-xs"
+                  aria-label="Facebook Profile"
+                  title="Facebook Profile (व्यक्तिगत अकाउंट)"
                 >
                   <Facebook size={17} />
                 </a>
@@ -134,6 +146,7 @@ export const Footer = () => {
                   href={`mailto:${personalInfo.email}`}
                   className="p-2.5 rounded-xl bg-slate-800 hover:bg-[#FF683D] text-white transition shadow-xs"
                   aria-label="Email"
+                  title="Email"
                 >
                   <Mail size={17} />
                 </a>

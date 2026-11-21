@@ -408,7 +408,8 @@ export const AdminDashboard = ({
                       <p>• <strong>ईमेल:</strong> {personalInfo.email}</p>
                       <p>• <strong>फोन:</strong> +91 {personalInfo.phone}</p>
                       <p>• <strong>इंस्टाग्राम:</strong> {personalInfo.instagram}</p>
-                      <p>• <strong>फेसबुक:</strong> {personalInfo.facebook}</p>
+                      <p>• <strong>फेसबुक अकाउंट:</strong> {personalInfo.facebookProfile}</p>
+                      <p>• <strong>फेसबुक पेज:</strong> {personalInfo.facebookPage}</p>
                     </div>
                   </div>
                 </div>
