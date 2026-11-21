@@ -8,6 +8,7 @@ const navLinks = [
   { id: 'home', label: 'HOME', labelHindi: 'मुख्य पृष्ठ' },
   { id: 'about', label: 'ABOUT US', labelHindi: 'परिचय' },
   { id: 'journey', label: 'POLITICAL JOURNEY', labelHindi: 'राजनीतिक सफर' },
+  { id: 'preparations', label: 'MISSION 2027', labelHindi: '2027 तैयारियां' },
   { id: 'activities', label: 'PUBLIC ACTIVITIES', labelHindi: 'सार्वजनिक गतिविधियां' },
   { id: 'social-work', label: 'SOCIAL WORK', labelHindi: 'सामाजिक कार्य' },
   { id: 'media', label: 'MEDIA', labelHindi: 'फोटो व वीडियो' },

@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { PoliticalJourney } from './components/PoliticalJourney';
+import { Preparations2027 } from './components/Preparations2027';
 import { PublicActivities } from './components/PublicActivities';
 import { SocialWork } from './components/SocialWork';
 import { MediaGallery } from './components/MediaGallery';
@@ -130,6 +131,9 @@ export function App() {
 
       {/* 3.5. Political Journey & Family Legacy Section */}
       <PoliticalJourney />
+
+      {/* 3.8. Recent Activities & 2027 Preparations Section */}
+      <Preparations2027 />
 
       {/* 4. Public Activities Section */}
       <PublicActivities activities={activities} />

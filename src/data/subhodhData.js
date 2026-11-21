@@ -343,3 +343,66 @@ export const politicalJourneyData = {
     ]
   }
 };
+
+export const preparations2027Data = {
+  badge: "हालिया गतिविधियां एवं भावी दृष्टिकोण",
+  badgeEn: "Recent Activities & Future Vision",
+  title: "हालिया गतिविधियां एवं 2027 की तैयारियां",
+  titleEn: "Recent Activities & Preparations for 2027",
+  subtitle: "हरिद्वार जनपद में भारतीय जनता पार्टी (BJP) के नेता के रूप में जनसेवा, संगठनात्मक सक्रियता और 2027 विधानसभा चुनाव की रूपरेखा।",
+  subtitleEn: "Public service as a BJP leader in Haridwar district, organizational engagement, and roadmap for the 2027 Assembly Elections.",
+
+  recentActivities: {
+    title: "हालिया संगठनात्मक एवं जनसंपर्क गतिविधियां",
+    titleEn: "Recent Organizational & Outreach Activities",
+    partyTag: "भारतीय जनता पार्टी (BJP)",
+    description: "सुबोध राकेश हरिद्वार जनपद में भारतीय जनता पार्टी (BJP) के नेता के रूप में स्थानीय सार्वजनिक कार्यक्रमों, जनसंपर्क अभियानों और पार्टी की गतिविधियों में सक्रिय रहे हैं। भगवानपुर और ज्वालापुर विधानसभा क्षेत्रों में उनकी सार्वजनिक गतिविधियां देखने को मिली हैं।",
+    descriptionEn: "Subhod Rakesh has been actively engaged as a leader of the Bharatiya Janata Party (BJP) in Haridwar district, participating in local public programs, mass outreach campaigns, and party initiatives. His public outreach has been prominent across both Bhagwanpur and Jwalapur assembly constituencies.",
+    constituencies: [
+      {
+        name: "भगवानपुर विधानसभा क्षेत्र",
+        nameEn: "Bhagwanpur Constituency",
+        desc: "सार्वजनिक कार्यक्रमों, सामाजिक सम्मेलनों एवं स्थानीय जनसमस्याओं के समाधान में निरंतर सक्रिय उपस्थिति।",
+        descEn: "Consistent participation in public programs, social gatherings, and citizen grievance redressal."
+      },
+      {
+        name: "ज्वालापुर विधानसभा क्षेत्र",
+        nameEn: "Jwalapur Constituency",
+        desc: "व्यापक जनसंपर्क, चौपाल संवाद, कार्यकर्ताओं के साथ बैठकें एवं क्षेत्रीय विकास के मुद्दों पर सतत सहभागिता।",
+        descEn: "Extensive mass outreach, community dialogues, party cadre meetings, and regional development initiatives."
+      }
+    ]
+  },
+
+  election2027: {
+    year: "2027",
+    tag: "उत्तराखंड विधानसभा चुनाव 2027",
+    tagEn: "Uttarakhand Assembly Election 2027",
+    title: "वर्ष 2027 की तैयारियां एवं चुनावी संकल्प",
+    titleEn: "2027 Preparations & Electoral Aspiration",
+    targetConstituency: "ज्वालापुर विधानसभा क्षेत्र",
+    targetConstituencyEn: "Jwalapur Assembly Constituency",
+    statement: "वर्ष 2027 के उत्तराखंड विधानसभा चुनाव को ध्यान में रखते हुए, उन्होंने ज्वालापुर विधानसभा क्षेत्र से चुनाव लड़ने की इच्छा व्यक्त की है।",
+    statementEn: "In view of the 2027 Uttarakhand Assembly Elections, he has expressed his aspiration to contest from the Jwalapur Assembly Constituency.",
+    highlights: [
+      {
+        label: "लक्षित क्षेत्र",
+        labelEn: "Target Constituency",
+        value: "ज्वालापुर विधानसभा (हरिद्वार)",
+        valueEn: "Jwalapur Constituency (Haridwar)"
+      },
+      {
+        label: "राजनीतिक दल",
+        labelEn: "Political Party",
+        value: "भारतीय जनता पार्टी (BJP)",
+        valueEn: "Bharatiya Janata Party (BJP)"
+      },
+      {
+        label: "प्राथमिक संकल्प",
+        labelEn: "Key Objective",
+        value: "क्षेत्रीय समग्र विकास एवं जनसेवा",
+        valueEn: "Comprehensive Regional Development"
+      }
+    ]
+  }
+};
