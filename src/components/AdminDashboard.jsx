@@ -404,6 +404,8 @@ export const AdminDashboard = ({
                   <div className="p-5 rounded-2xl bg-[#F5F6FA] border border-slate-200 space-y-3">
                     <h5 className="font-bold text-sm text-[#172033]">सुबोध राकेश जी का आधिकारिक परिचय संक्षेप</h5>
                     <div className="text-xs text-slate-600 space-y-1">
+                      <p>• <strong>जन्मस्थान:</strong> भगवानपुर</p>
+                      <p>• <strong>कर्मस्थल:</strong> ज्वालापुर, हरिद्वार</p>
                       <p>• <strong>स्थान:</strong> ज्वालापुर, हरिद्वार, उत्तराखंड</p>
                       <p>• <strong>ईमेल:</strong> {personalInfo.email}</p>
                       <p>• <strong>फोन:</strong> +91 {personalInfo.phone}</p>

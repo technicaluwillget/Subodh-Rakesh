@@ -80,13 +80,17 @@ export const About = () => {
             <div className="rounded-2xl bg-[#F5F6FA] p-6 border border-slate-200/80 space-y-3.5 text-xs sm:text-sm">
               <h4 className="font-bold text-[#172033] text-sm uppercase tracking-wider border-b border-slate-300 pb-2 flex items-center gap-2">
                 <CheckCircle size={16} className="text-[#FF683D]" />
-                <span>व्यक्तिगत एवं पारिवारिक प्रोफाइल</span>
+                <span>{t('व्यक्तिगत एवं पारिवारिक प्रोफाइल', 'Personal & Family Profile')}</span>
               </h4>
 
               {aboutData.personalBackground.map((item, i) => (
                 <div key={i} className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-1 border-b border-slate-200/60 last:border-0">
-                  <span className="font-semibold text-slate-500 min-w-[120px]">{item.label}:</span>
-                  <span className="font-bold text-[#172033] sm:text-right">{item.value}</span>
+                  <span className="font-semibold text-slate-500 min-w-[120px]">
+                    {language === 'en' && item.labelEn ? item.labelEn : item.label}:
+                  </span>
+                  <span className="font-bold text-[#172033] sm:text-right">
+                    {language === 'en' && item.valueEn ? item.valueEn : item.value}
+                  </span>
                 </div>
               ))}
             </div>

@@ -25,6 +25,10 @@ export const personalInfo = {
   email: "subodhrakesh1985@gmail.com",
   phone: "9760691667",
   whatsapp: "9760691667",
+  birthplace: "भगवानपुर",
+  birthplaceEn: "Bhagwanpur",
+  workplace: "ज्वालापुर, हरिद्वार",
+  workplaceEn: "Jwalapur, Haridwar",
   location: "ज्वालापुर, हरिद्वार, उत्तराखंड, भारत",
   locationEn: "Jwalapur, Haridwar, Uttarakhand, India",
   area: "ज्वालापुर / हरिद्वार विधानसभा क्षेत्र",
@@ -55,12 +59,13 @@ export const aboutData = {
     "ज्वालापुर और हरिद्वार क्षेत्र में सड़क, स्वच्छता, सिंचाई, उच्च शिक्षा, स्वास्थ्य सुविधाएं एवं युवा रोज़गार को बढ़ावा देने के लिए वे निरंतर जनसंवाद व जनसंपर्क के माध्यम से तत्पर रहते हैं।"
   ],
   personalBackground: [
-    { label: "नाम", value: "सुबोध राकेश (Subhod Rakesh)" },
-    { label: "पारिवारिक पृष्ठभूमि", value: "स्व. सुरेंद्र राकेश जी (पूर्व कैबिनेट मंत्री, उत्तराखंड सरकार) की जनसेवा परंपरा" },
-    { label: "मूल निवास व कार्यक्षेत्र", value: "ज्वालापुर, हरिद्वार, उत्तराखंड" },
-    { label: "शिक्षा", value: "इंटरमीडिएट / उच्च शिक्षा (उत्तराखंड) — [आवश्यकतानुसार एडमिन से संपादन योग्य]" },
-    { label: "सार्वजनिक भूमिका", value: "प्रमुख जननेता, सामाजिक कार्यकर्ता एवं विकास प्रेरक" },
-    { label: "प्रमुख रुचियां", value: "ग्रामीण विकास, खेलकूद संवर्धन, जनसमस्या निवारण एवं सांस्कृतिक संरक्षण" }
+    { label: "नाम", labelEn: "Name", value: "सुबोध राकेश (Subhod Rakesh)", valueEn: "Subhod Rakesh" },
+    { label: "पारिवारिक पृष्ठभूमि", labelEn: "Family Background", value: "स्व. सुरेंद्र राकेश जी (पूर्व कैबिनेट मंत्री, उत्तराखंड सरकार) की जनसेवा परंपरा", valueEn: "Legacy of Late Surendra Rakesh (Former Cabinet Minister, Govt of Uttarakhand)" },
+    { label: "जन्मस्थान", labelEn: "Birthplace (Janmsthan)", value: "भगवानपुर", valueEn: "Bhagwanpur" },
+    { label: "कर्मस्थल", labelEn: "Workplace (Karmsthan)", value: "ज्वालापुर, हरिद्वार", valueEn: "Jwalapur, Haridwar" },
+    { label: "शिक्षा", labelEn: "Education", value: "इंटरमीडिएट / उच्च शिक्षा (उत्तराखंड) — [आवश्यकतानुसार एडमिन से संपादन योग्य]", valueEn: "Higher Education (Uttarakhand)" },
+    { label: "सार्वजनिक भूमिका", labelEn: "Public Role", value: "प्रमुख जननेता, सामाजिक कार्यकर्ता एवं विकास प्रेरक", valueEn: "Prominent Public Leader & Social Reformer" },
+    { label: "प्रमुख रुचियां", labelEn: "Key Interests", value: "ग्रामीण विकास, खेलकूद संवर्धन, जनसमस्या निवारण एवं सांस्कृतिक संरक्षण", valueEn: "Rural Development, Sports Promotion, Grievance Redressal & Cultural Heritage" }
   ],
   visionPillars: [
     {
