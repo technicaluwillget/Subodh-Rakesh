@@ -11,14 +11,16 @@ const categories = [
   { id: 'Community Programs', label: 'सामुदायिक जनसंवाद', labelHi: 'सामुदायिक जनसंवाद', labelEn: 'Community Programs' },
 ];
 
-export const MediaGallery = ({ galleryItems }) => {
+export const MediaGallery = ({ galleryItems = [] }) => {
   const { language, t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('all');
   const [lightboxItem, setLightboxItem] = useState(null);
 
+  const safeGalleryItems = Array.isArray(galleryItems) ? galleryItems : [];
+
   const filteredItems = activeFilter === 'all'
-    ? galleryItems
-    : galleryItems.filter(item => item.category === activeFilter);
+    ? safeGalleryItems
+    : safeGalleryItems.filter(item => item && item.category === activeFilter);
 
   return (
     <section id="media" className="py-24 bg-[#F5F6FA] relative">

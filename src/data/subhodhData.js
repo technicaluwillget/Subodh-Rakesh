@@ -268,3 +268,78 @@ export const initialNewsUpdates = [
 जय उत्तराखण्ड!`
   }
 ];
+
+export const politicalJourneyData = {
+  title: "राजनीतिक सफर एवं पारिवारिक विरासत",
+  titleEn: "Political Journey & Family Legacy",
+  subtitle: "भगवानपुर एवं हरिद्वार क्षेत्र में जनसेवा, राजनीतिक अनुभव और लोकतांत्रिक सहभागिता का इतिहास।",
+  subtitleEn: "History of public service, political journey, and democratic engagement in Bhagwanpur & Haridwar region.",
+  
+  // 1. पारिवारिक पृष्ठभूमि एवं राजनीतिक विरासत
+  familyLegacy: {
+    title: "पारिवारिक पृष्ठभूमि एवं राजनीतिक विरासत",
+    titleEn: "Family Background & Political Legacy",
+    paragraphs: [
+      "सुभोद राकेश, स्वर्गीय सुरेंद्र राकेश के छोटे भाई हैं। सुरेंद्र राकेश भगवानपुर विधानसभा क्षेत्र से वर्ष 2007 और 2012 में दो बार विधायक निर्वाचित हुए थे तथा उत्तराखंड सरकार में कैबिनेट मंत्री रहे थे।",
+      "वर्ष 2015 में उनके निधन के बाद उनकी पत्नी ममता राकेश ने राजनीति में प्रवेश किया और भगवानपुर से कांग्रेस विधायक निर्वाचित हुईं। ममता राकेश, सुभोद राकेश की भाभी हैं और भगवानपुर विधानसभा क्षेत्र की राजनीति में उनकी प्रमुख चुनावी प्रतिद्वंद्वी रही हैं।"
+    ],
+    paragraphsEn: [
+      "Subhod Rakesh is the younger brother of Late Surendra Rakesh. Surendra Rakesh was elected MLA twice from Bhagwanpur constituency in 2007 and 2012, and served as a Cabinet Minister in the Government of Uttarakhand.",
+      "Following his demise in 2015, his wife Mamta Rakesh entered politics and was elected as the Congress MLA from Bhagwanpur. Mamta Rakesh is the sister-in-law of Subhod Rakesh and has been his key electoral rival in the politics of Bhagwanpur constituency."
+    ]
+  },
+
+  // 2. राजनीतिक सफर एवं पार्टी से जुड़ाव
+  timeline: [
+    {
+      year: "2016",
+      party: "BJP",
+      desc: "BJP में शामिल हुए।",
+      descEn: "Joined Bharatiya Janata Party (BJP)."
+    },
+    {
+      year: "दिसंबर 2021",
+      yearEn: "Dec 2021",
+      party: "BSP",
+      desc: "BSP में शामिल हुए।",
+      descEn: "Joined Bahujan Samaj Party (BSP)."
+    },
+    {
+      year: "मार्च 2024",
+      yearEn: "Mar 2024",
+      party: "BJP",
+      desc: "पुनः BJP में शामिल हुए।",
+      descEn: "Rejoined Bharatiya Janata Party (BJP)."
+    }
+  ],
+
+  // 3. चुनावी रिकॉर्ड – भगवानपुर विधानसभा क्षेत्र
+  electoralRecord: {
+    constituency: "भगवानपुर विधानसभा क्षेत्र",
+    constituencyEn: "Bhagwanpur Assembly Constituency",
+    sourceNote: "भारत निर्वाचन आयोग (ECI) के आधिकारिक सार्वजनिक आंकड़ों के अनुसार",
+    sourceNoteEn: "According to official public records of the Election Commission of India (ECI)",
+    records: [
+      {
+        year: "2017",
+        party: "BJP",
+        votes: "42,369",
+        voteShare: "45.66%",
+        result: "द्वितीय स्थान",
+        resultEn: "Runner-up (2nd Place)",
+        marginDetail: "2017 में ममता राकेश (कांग्रेस) ने 2,513 वोटों के अंतर से जीत हासिल की।",
+        marginDetailEn: "In 2017, Mamta Rakesh (Congress) won by a margin of 2,513 votes."
+      },
+      {
+        year: "2022",
+        party: "BSP",
+        votes: "39,997",
+        voteShare: "40.49%",
+        result: "द्वितीय स्थान",
+        resultEn: "Runner-up (2nd Place)",
+        marginDetail: "2022 में ममता राकेश (कांग्रेस) ने 4,811 वोटों के अंतर से जीत हासिल की।",
+        marginDetailEn: "In 2022, Mamta Rakesh (Congress) won by a margin of 4,811 votes."
+      }
+    ]
+  }
+};

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { PoliticalJourney } from './components/PoliticalJourney';
 import { PublicActivities } from './components/PublicActivities';
 import { SocialWork } from './components/SocialWork';
 import { MediaGallery } from './components/MediaGallery';
@@ -126,6 +127,9 @@ export function App() {
 
       {/* 3. About Us Section */}
       <About />
+
+      {/* 3.5. Political Journey & Family Legacy Section */}
+      <PoliticalJourney />
 
       {/* 4. Public Activities Section */}
       <PublicActivities activities={activities} />

@@ -4,14 +4,16 @@ import { Calendar, MapPin, CheckCircle, ArrowRight, X, ExternalLink } from 'luci
 import { publicActivitiesCategories } from '../data/subhodhData';
 import { useLanguage } from '../context/LanguageContext';
 
-export const PublicActivities = ({ activities }) => {
+export const PublicActivities = ({ activities = [] }) => {
   const { language, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedActivity, setSelectedActivity] = useState(null);
 
+  const safeActivities = Array.isArray(activities) ? activities : [];
+
   const filteredActivities = activeCategory === 'all'
-    ? activities
-    : activities.filter(a => a.category === activeCategory);
+    ? safeActivities
+    : safeActivities.filter(a => a && a.category === activeCategory);
 
   return (
     <section id="activities" className="py-24 bg-[#F5F6FA] relative">

@@ -17,19 +17,20 @@ import {
 import { newsCategories } from '../data/subhodhData';
 import { useLanguage } from '../context/LanguageContext';
 
-export const NewsUpdates = ({ newsItems }) => {
+export const NewsUpdates = ({ newsItems = [] }) => {
   const { language, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('सभी समाचार');
   const [viewType, setViewType] = useState('all'); // 'all', 'latest', 'previous'
   const [selectedNews, setSelectedNews] = useState(null);
   const [copiedId, setCopiedId] = useState(null);
 
+  const safeNewsItems = Array.isArray(newsItems) ? newsItems : [];
+
   // Filter by category
   const categoryFiltered = activeCategory === 'सभी समाचार'
-    ? newsItems
-    : newsItems.filter(item => 
-        item.category === activeCategory || 
-        item.tag === activeCategory
+    ? safeNewsItems
+    : safeNewsItems.filter(item => 
+        item && (item.category === activeCategory || item.tag === activeCategory)
       );
 
   // Filter by Latest / Previous

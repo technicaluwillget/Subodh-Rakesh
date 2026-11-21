@@ -24,6 +24,7 @@ export const Footer = () => {
   const navLinks = [
     { href: '#home', label: t('मुख्य पृष्ठ', 'Home') },
     { href: '#about', label: t('परिचय', 'About Us') },
+    { href: '#journey', label: t('राजनीतिक सफर एवं विरासत', 'Political Journey & Legacy') },
     { href: '#activities', label: t('सार्वजनिक गतिविधियां', 'Public Activities') },
     { href: '#social-work', label: t('सामाजिक कार्य', 'Social Work') },
     { href: '#media', label: t('फोटो व वीडियो', 'Media Gallery') },
