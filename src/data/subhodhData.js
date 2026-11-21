@@ -33,9 +33,9 @@ export const personalInfo = {
   // Social Links
   instagram: "https://www.instagram.com/subodh_rakesh_official?jplx=MXQ5cTZ2MWc5eXRpZw==",
   instagramHandle: "@subodh_rakesh_official",
-  facebook: "https://www.facebook.com/share/1EDARime4P/",
-  facebookPage: "https://www.facebook.com/share/1EDARime4P/",
-  facebookProfile: "https://www.facebook.com/Subodhrakesh001",
+  facebook: "https://www.facebook.com/Subodhrakesh001",
+  facebookPage: "https://www.facebook.com/Subodhrakesh001",
+  facebookProfile: "https://www.facebook.com/share/1EDARime4P/",
   
   // Key Stats
   stats: [
